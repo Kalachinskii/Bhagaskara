@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
+$activ_color: #9f449b;
+
+body{
+    margin: 0;
+    box-sizing: border-box;
+    color: #fff;
+    // overflow: hidden;
+}
+.container {
+    margin: 0px auto;
+    max-width: 2022px;
+    position: relative;
+    display: flex;
+}
+
+header {
+    .container {
+        flex-direction: column;
+        background: url(/img/Layer2.png);
+        text-align: center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        .top {
+            h1 {
+                font-family: 'Raleway', sans-serif;
+                font-size: 90px;
+                span {
+                    color: $activ_color;
+                }
+            }
+            .fusce {
+                h4 {
+                    font-size: 48px;
+                    line-height: 24px;
+                }
+                p {
+                    font-size: 24px;
+                    line-height: 30px;
+                }
+            }
+        }
+        .bot {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            // row-gap: 250px; от 707px
+            .items {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                height: 50vh;
+                .one,
+                .two,
+                .fhree {
+                    position: relative;
+                }
+                .item {
+                    position: relative;
+                    overflow: hidden;
+                    cursor: pointer;
+                    img+img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                    }
+                }
+                // Левый основной элемент
+                .item:hover > img:first-child {
+                    animation: animal-2 1.2s;
+                    animation-fill-mode: forwards;
+                }
+                // Правый элемент
+                .item:hover > img:last-child {
+                    animation: animal-1 1.2s;
+                    animation-fill-mode: forwards;
+                }
+                .item::after {
+                    position: absolute;
+                    top: 70%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    font-size: 24px;
+                }
+                .item::before {
+                    content: '';
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    background-size:cover;
+                    width: 37%;
+                    height: 32%;
+                }
+                .one {
+                    display: flex;
+                    column-gap: 20px;
+                    align-self: flex-end;
+                    .itemAbout::after {
+                        content: 'About';
+                    }
+                    .itemTeam::after {
+                        content: 'Team';
+                    }
+                    .itemAbout::before {
+                        background: url(img/icons/settings.png) no-repeat;
+                    }
+                    .itemTeam::before {
+                        background: url(img/icons/user.png) no-repeat;
+                    }
+                }
+                .two {
+                    display: flex;
+                    column-gap: 20px;
+                    align-self: center;
+                    .itemServices::after {
+                        content: 'Services';
+                    }
+                    .itemPortfolio::after {
+                        content: 'Portfolio';
+                    }
+                    .itemServices::before {
+                        background: url(img/icons/bubble.png) no-repeat;
+                    }
+                    .itemPortfolio::before {
+                        background: url(img/icons/photo.png) no-repeat;
+                    }
+                }
+                .fhree {
+                    display: flex;
+                    column-gap: 20px;
+                    align-self: flex-end;
+                    .itemBlog::after {
+                        content: 'Blog';
+                    }
+                    .itemContact::after {
+                        content: 'Contact';
+                    }
+                    .itemBlog::before {
+                        background: url(img/icons/pen.png) no-repeat;
+                    }
+                    .itemContact::before {
+                        background: url(img/icons/paperplane.png) no-repeat;
+                    }
+                }
+            }
+            .btnDown {
+                margin-bottom: 50px;
+                position: relative;
+                img {
+                    cursor: pointer;
+                    animation: animal-3 2.2s infinite;
+                }
+                span {
+                    cursor: pointer;
+                    font-weight: bold;
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%) rotate(90deg);
+                    font-size: 30px;
+                }
+                img:hover + span,
+                span:hover {
+                    color: $activ_color;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+}
+.goals {
+    .container {
+        border: 1px solid blue;
+        background-color: #eeeeee;
+        .items {
+            align-items: center;
+            display: flex;
+            color: #000;
+            height: 800px;
+            text-align: center;
+            .one,
+            .two,
+            .fhree,
+            .four {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex-wrap: wrap;
+                row-gap: 50px;
+                .img {
+                    position: relative;
+                    cursor: pointer;
+                    img+img {
+                        align-self: center;
+                        position: absolute;
+                        top: 0%;
+                        left: 0%;
+                        transform: translate(0%,0%);
+                        opacity: 0;
+                        z-index: 4;
+                    }
+                    div::after {
+                        content: '';
+                        height: 50%;
+                        width: 50%;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        z-index: 0;
+                    }
+                }
+                .img:hover > img+img,
+                .img:hover > img:first-child {
+                    animation: animal-4 2s forwards;
+                }
+            }
+            .one {
+                div:after {
+                    background: url(/img/1/heart.png) no-repeat;
+                    transform: translate(-45%,-40%);
+                }
+            }
+            .two {
+                div:after {
+                    background: url(/img/1/diamond.png) no-repeat;
+                    transform: translate(-50%,-40%);
+                }
+            }
+            .fhree {
+                div:after {
+                    background: url(/img/1/cup.png) no-repeat;
+                    transform: translate(-30%,-40%);
+                }
+            }
+            .four {
+                div:after {
+                    background: url(/img/1/phone.png) no-repeat;
+                    transform: translate(-30%,-40%);
+                }
+            }
+        }
+    }
+}
+
+
+// Замена иконки на Hedere
+// Правый элемент
+@keyframes animal-1 {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+// Левый основной элемент
+@keyframes animal-2 {
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+@keyframes animal-3 {
+    0% {
+        transform: rotate(180deg);
+    }
+}
+@keyframes animal-4 {
+    0% {
+        transform: rotate(180deg);
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+body {
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.container {
+  margin: 0px auto;
+  max-width: 2022px;
+  position: relative;
+  display: flex;
+}
+
+header .container {
+  flex-direction: column;
+  background: url(/img/Layer2.png);
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+header .container .top h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 90px;
+}
+header .container .top h1 span {
+  color: #9f449b;
+}
+header .container .top .fusce h4 {
+  font-size: 48px;
+  line-height: 24px;
+}
+header .container .top .fusce p {
+  font-size: 24px;
+  line-height: 30px;
+}
+header .container .bot {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+header .container .bot .items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 50vh;
+}
+header .container .bot .items .one,
+header .container .bot .items .two,
+header .container .bot .items .fhree {
+  position: relative;
+}
+header .container .bot .items .item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+header .container .bot .items .item img + img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+header .container .bot .items .item:hover > img:first-child {
+  animation: animal-2 1.2s;
+  animation-fill-mode: forwards;
+}
+header .container .bot .items .item:hover > img:last-child {
+  animation: animal-1 1.2s;
+  animation-fill-mode: forwards;
+}
+header .container .bot .items .item::after {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+header .container .bot .items .item::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  width: 37%;
+  height: 32%;
+}
+header .container .bot .items .one {
+  display: flex;
+  column-gap: 20px;
+  align-self: flex-end;
+}
+header .container .bot .items .one .itemAbout::after {
+  content: "About";
+}
+header .container .bot .items .one .itemTeam::after {
+  content: "Team";
+}
+header .container .bot .items .one .itemAbout::before {
+  background: url(img/icons/settings.png) no-repeat;
+}
+header .container .bot .items .one .itemTeam::before {
+  background: url(img/icons/user.png) no-repeat;
+}
+header .container .bot .items .two {
+  display: flex;
+  column-gap: 20px;
+  align-self: center;
+}
+header .container .bot .items .two .itemServices::after {
+  content: "Services";
+}
+header .container .bot .items .two .itemPortfolio::after {
+  content: "Portfolio";
+}
+header .container .bot .items .two .itemServices::before {
+  background: url(img/icons/bubble.png) no-repeat;
+}
+header .container .bot .items .two .itemPortfolio::before {
+  background: url(img/icons/photo.png) no-repeat;
+}
+header .container .bot .items .fhree {
+  display: flex;
+  column-gap: 20px;
+  align-self: flex-end;
+}
+header .container .bot .items .fhree .itemBlog::after {
+  content: "Blog";
+}
+header .container .bot .items .fhree .itemContact::after {
+  content: "Contact";
+}
+header .container .bot .items .fhree .itemBlog::before {
+  background: url(img/icons/pen.png) no-repeat;
+}
+header .container .bot .items .fhree .itemContact::before {
+  background: url(img/icons/paperplane.png) no-repeat;
+}
+header .container .bot .btnDown {
+  margin-bottom: 50px;
+  position: relative;
+}
+header .container .bot .btnDown img {
+  cursor: pointer;
+  animation: animal-3 2.2s infinite;
+}
+header .container .bot .btnDown span {
+  cursor: pointer;
+  font-weight: bold;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  font-size: 30px;
+}
+header .container .bot .btnDown img:hover + span,
+header .container .bot .btnDown span:hover {
+  color: #9f449b;
+  transition: 0.5s;
+}
+
+.goals .container {
+  border: 1px solid blue;
+  background-color: #eeeeee;
+}
+.goals .container .items {
+  align-items: center;
+  display: flex;
+  color: #000;
+  height: 800px;
+  text-align: center;
+}
+.goals .container .items .one,
+.goals .container .items .two,
+.goals .container .items .fhree,
+.goals .container .items .four {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 50px;
+}
+.goals .container .items .one .img,
+.goals .container .items .two .img,
+.goals .container .items .fhree .img,
+.goals .container .items .four .img {
+  position: relative;
+  cursor: pointer;
+}
+.goals .container .items .one .img img + img,
+.goals .container .items .two .img img + img,
+.goals .container .items .fhree .img img + img,
+.goals .container .items .four .img img + img {
+  align-self: center;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(0%, 0%);
+  opacity: 0;
+  z-index: 4;
+}
+.goals .container .items .one .img div::after,
+.goals .container .items .two .img div::after,
+.goals .container .items .fhree .img div::after,
+.goals .container .items .four .img div::after {
+  content: "";
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+}
+.goals .container .items .one .img:hover > img + img,
+.goals .container .items .one .img:hover > img:first-child,
+.goals .container .items .two .img:hover > img + img,
+.goals .container .items .two .img:hover > img:first-child,
+.goals .container .items .fhree .img:hover > img + img,
+.goals .container .items .fhree .img:hover > img:first-child,
+.goals .container .items .four .img:hover > img + img,
+.goals .container .items .four .img:hover > img:first-child {
+  animation: animal-4 2s forwards;
+}
+.goals .container .items .one div:after {
+  background: url(/img/1/heart.png) no-repeat;
+  transform: translate(-45%, -40%);
+}
+.goals .container .items .two div:after {
+  background: url(/img/1/diamond.png) no-repeat;
+  transform: translate(-50%, -40%);
+}
+.goals .container .items .fhree div:after {
+  background: url(/img/1/cup.png) no-repeat;
+  transform: translate(-30%, -40%);
+}
+.goals .container .items .four div:after {
+  background: url(/img/1/phone.png) no-repeat;
+  transform: translate(-30%, -40%);
+}
+
+@keyframes animal-1 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes animal-2 {
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+@keyframes animal-3 {
+  0% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes animal-4 {
+  0% {
+    transform: rotate(180deg);
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
