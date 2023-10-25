@@ -421,12 +421,24 @@ header .container .bot .btnDown span:hover {
   transform: translate(-50%, -50%);
   color: #9f449b;
   font-size: 45px;
+  cursor: pointer;
 }
 .team .container .btn .right div::after {
   content: "➡";
 }
 .team .container .btn .left div::after {
   content: "⬅";
+}
+.team .container .btn .left:hover > div::after {
+  animation: lefts 1s alternate infinite;
+}
+.team .container .btn .right:hover > div::after {
+  animation: rights 1s alternate infinite;
+}
+.team .container .btn .right:hover > input,
+.team .container .btn .left:hover > input {
+  transform: rotate(180deg);
+  transition: 3s;
 }
 .team .container .items {
   color: #000;
@@ -452,6 +464,109 @@ header .container .bot .btnDown span:hover {
   border-radius: 50%;
   font-weight: bold;
   font-size: 16px;
+}
+
+.skills .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 180px;
+}
+.skills .container h1 {
+  font-size: 68px;
+  color: #676767;
+  padding: 35px;
+  position: relative;
+}
+.skills .container h1 span {
+  color: #9f449b;
+}
+.skills .container h1:after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 120%;
+  transform: translate(-50%, -50%);
+  background: url(img/2/Shape\ 6.png) no-repeat;
+  height: 40px;
+  width: 30px;
+  transform: scale(2);
+}
+.skills .container h1:before {
+  content: "";
+  position: absolute;
+  left: -20%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  background: url(img/2/Shape\ 6.png) no-repeat;
+  height: 40px;
+  width: 30px;
+  transform: rotate(180deg) scale(2);
+}
+.skills .container .items {
+  margin: 150px 0;
+  color: #000;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  justify-content: center;
+}
+.skills .container .items .top,
+.skills .container .items .bottom {
+  width: 100%;
+  display: flex;
+  gap: 10%;
+  padding: 0 10%;
+}
+.skills .container .items .top .item,
+.skills .container .items .bottom .item {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.skills .container .items .top .item .text,
+.skills .container .items .bottom .item .text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.skills .container .items .top .item .text span,
+.skills .container .items .bottom .item .text span {
+  padding-left: 50px;
+  font-weight: bold;
+}
+.skills .container .items .top .item .loading,
+.skills .container .items .bottom .item .loading {
+  height: 20px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #ccc;
+  box-shadow: 0px 5px 12px 2px #000;
+}
+.skills .container .items .top .item .loading::before,
+.skills .container .items .bottom .item .loading::before {
+  content: "";
+  background-color: #9f449b;
+  padding: 1% 50%;
+  width: 100%;
+  height: 100%;
+  transition: 3s;
+  position: absolute;
+}
+.skills .container .items .top .load-1::before {
+  animation: load-1 3s forwards;
+}
+.skills .container .items .top .load-2::before {
+  animation: load-2 3s forwards;
+}
+.skills .container .items .bottom .load-3::before {
+  animation: load-3 3s forwards;
+}
+.skills .container .items .bottom .load-4::before {
+  animation: load-4 3s forwards;
 }
 
 .quotes {
@@ -526,6 +641,62 @@ header .container .bot .btnDown span:hover {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes lefts {
+  from {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    top: 45%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes rights {
+  from {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    top: 45%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes load-1 {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(-55%, 0);
+  }
+}
+@keyframes load-2 {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(-60%, 0);
+  }
+}
+@keyframes load-3 {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(-62.5%, 0);
+  }
+}
+@keyframes load-4 {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(-57.5%, 0);
   }
 }
 
