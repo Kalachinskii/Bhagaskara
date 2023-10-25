@@ -333,22 +333,26 @@ header .container .bot .btnDown span:hover {
   background-color: rgba(159, 68, 155, 0.7450980392);
 }
 
-.education {
+.education,
+.services {
   background: url("/img/Layer 4.png");
   background-size: cover;
   background-position: center;
 }
-.education .container {
+.education .container,
+.services .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 160px 0;
   row-gap: 20px;
 }
-.education .container .img {
+.education .container .img,
+.services .container .img {
   position: relative;
 }
-.education .container .img div::after {
+.education .container .img div::after,
+.services .container .img div::after {
   content: "";
   height: 50%;
   width: 50%;
@@ -357,14 +361,19 @@ header .container .bot .btnDown span:hover {
   left: 50%;
   z-index: 0;
 }
-.education .container .img div:after {
-  background: url(/img/3/study.png) no-repeat;
+.education .container .img div:after,
+.services .container .img div:after {
   transform: translate(-45%, -34%);
 }
-.education .container h2 {
+.education .container h2,
+.services .container h2 {
   font-size: 48px;
   width: 40%;
   text-align: center;
+}
+
+.education .img div:after {
+  background: url(/img/3/study.png) no-repeat;
 }
 
 .team .container {
@@ -567,6 +576,10 @@ header .container .bot .btnDown span:hover {
 }
 .skills .container .items .bottom .load-4::before {
   animation: load-4 3s forwards;
+}
+
+.services .img div:after {
+  background: url(/img/icons/bubble.png) no-repeat;
 }
 
 .quotes {
