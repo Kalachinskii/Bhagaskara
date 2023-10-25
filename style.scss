@@ -175,7 +175,6 @@ header {
 }
 .goals {
     .container {
-        border: 1px solid blue;
         background-color: #eeeeee;
         .items {
             align-items: center;
@@ -246,8 +245,102 @@ header {
         }
     }
 }
+.about {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 180px;
+        h1 {
+            font-size: 68px;
+            color: #000;
+            padding: 35px;
+            position: relative;
+            span {
+                color: $activ_color;
+            }
+        }
+        h1:after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 120%;
+            transform: translate(-50%, -50%);
+            background: url(img/2/Shape\ 6.png) no-repeat;
+            height: 40px;
+            width: 30px;
+            transform:scale(2);
+        }
+        h1:before {
+            content: '';
+            position: absolute;
+            left: -20%;
+            top: 80%;
+            transform: translate(-50%, -50%);
+            background: url(img/2/Shape\ 6.png) no-repeat;
+            height: 40px;
+            width: 30px;
+            transform:rotate(180deg) scale(2);
+        }
+        .items {
+            height: 1030px;
+            display: flex;
+            color: #000;
+            column-gap: 10%;
+            .pic {
+                position: relative;
+                align-self: center;
+                width: 100%;
+                text-align: right;
+                img:not(img:first-child) {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;         
+                }
+                img:nth-child(2) {
+                    transform: translate(-40%,0%);
+                }
+                img:nth-child(3) {
+                    transform: translate(40%,-0%);
+                }
+                img:nth-child(4) {
+                    transform: translate(100%,100%);
+                }
+            }
+            .text-btn {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                p {
+                    font-size: 32px;
+                    font-family: "Myriad Pro";
+                    color: rgb(103, 103, 103);
+                    line-height: 2.25;
+                }
+                a {
+                    color: #000;
+                    font-size: 32px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    padding: 2% 8%;
+                    align-self: start;
+                    background-color: $activ_color;
+                    box-shadow: 5px 5px 14px 5px #000;
+                }
+                a:hover {
+                    transition: 1s;
+                    background-color: #9f449bbe;
+                }
+            }
+        }
+    }
+}
 
 
+
+
+//                  Animation
 // Замена иконки на Hedere
 // Правый элемент
 @keyframes animal-1 {

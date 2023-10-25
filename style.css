@@ -163,7 +163,6 @@ header .container .bot .btnDown span:hover {
 }
 
 .goals .container {
-  border: 1px solid blue;
   background-color: #eeeeee;
 }
 .goals .container .items {
@@ -239,6 +238,96 @@ header .container .bot .btnDown span:hover {
 .goals .container .items .four div:after {
   background: url(/img/1/phone.png) no-repeat;
   transform: translate(-30%, -40%);
+}
+
+.about .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 180px;
+}
+.about .container h1 {
+  font-size: 68px;
+  color: #000;
+  padding: 35px;
+  position: relative;
+}
+.about .container h1 span {
+  color: #9f449b;
+}
+.about .container h1:after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 120%;
+  transform: translate(-50%, -50%);
+  background: url(img/2/Shape\ 6.png) no-repeat;
+  height: 40px;
+  width: 30px;
+  transform: scale(2);
+}
+.about .container h1:before {
+  content: "";
+  position: absolute;
+  left: -20%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  background: url(img/2/Shape\ 6.png) no-repeat;
+  height: 40px;
+  width: 30px;
+  transform: rotate(180deg) scale(2);
+}
+.about .container .items {
+  height: 1030px;
+  display: flex;
+  color: #000;
+  column-gap: 10%;
+}
+.about .container .items .pic {
+  position: relative;
+  align-self: center;
+  width: 100%;
+  text-align: right;
+}
+.about .container .items .pic img:not(img:first-child) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.about .container .items .pic img:nth-child(2) {
+  transform: translate(-40%, 0%);
+}
+.about .container .items .pic img:nth-child(3) {
+  transform: translate(40%, 0%);
+}
+.about .container .items .pic img:nth-child(4) {
+  transform: translate(100%, 100%);
+}
+.about .container .items .text-btn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about .container .items .text-btn p {
+  font-size: 32px;
+  font-family: "Myriad Pro";
+  color: rgb(103, 103, 103);
+  line-height: 2.25;
+}
+.about .container .items .text-btn a {
+  color: #000;
+  font-size: 32px;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 2% 8%;
+  align-self: start;
+  background-color: #9f449b;
+  box-shadow: 5px 5px 14px 5px #000;
+}
+.about .container .items .text-btn a:hover {
+  transition: 1s;
+  background-color: rgba(159, 68, 155, 0.7450980392);
 }
 
 @keyframes animal-1 {
