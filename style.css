@@ -609,19 +609,38 @@ header .container .bot .btnDown span:hover {
   row-gap: 20px;
   align-items: center;
   justify-content: center;
-  border: 1px solid red;
+  position: relative;
+  margin-bottom: 100px;
 }
 .quotes .container .cards .card {
-  display: flex;
   flex-direction: column;
   row-gap: 20px;
   align-items: center;
   justify-content: center;
+  padding-bottom: 50px;
+  display: none;
 }
 .quotes .container .cards .card h2 {
   font-size: 33px;
   width: 60%;
   text-align: center;
+}
+.quotes .container .cards .card p {
+  font-size: 20px;
+}
+.quotes .container .cards .radio {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.quotes .container .cards .radio:has(input:nth-child(1):checked) ~ .card-1,
+.quotes .container .cards .radio:has(input:nth-child(2):checked) ~ .card-2,
+.quotes .container .cards .radio:has(input:nth-child(3):checked) ~ .card-3,
+.quotes .container .cards .radio:has(input:nth-child(4):checked) ~ .card-4,
+.quotes .container .cards .radio:has(input:nth-child(5):checked) ~ .card-5,
+.quotes .container .cards .radio:has(input:nth-child(6):checked) ~ .card-6 {
+  display: flex;
 }
 
 @keyframes animal-1 {

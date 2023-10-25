@@ -596,8 +596,6 @@ header {
         }
     }
 }
-
-
 .quotes {
     background-color: #eeeeee;
     .container {
@@ -625,18 +623,37 @@ header {
             row-gap: 20px;
             align-items: center;
             justify-content: center;
-            border: 1px solid red;
+            position: relative;
+            margin-bottom: 100px;
             .card {
-                display: flex;
                 flex-direction: column;
                 row-gap: 20px;
                 align-items: center;
                 justify-content: center;
+                padding-bottom: 50px;
+                display: none;
                 h2 {
                     font-size: 33px;
                     width: 60%;
                     text-align: center;
                 }
+                p {
+                    font-size: 20px;
+                }
+            }
+            .radio {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .radio:has(input:nth-child(1):checked) ~ .card-1,
+            .radio:has(input:nth-child(2):checked) ~ .card-2,
+            .radio:has(input:nth-child(3):checked) ~ .card-3,
+            .radio:has(input:nth-child(4):checked) ~ .card-4,
+            .radio:has(input:nth-child(5):checked) ~ .card-5,
+            .radio:has(input:nth-child(6):checked) ~ .card-6 {
+                display: flex;
             }
         }
     }
