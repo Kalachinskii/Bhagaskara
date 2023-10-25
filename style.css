@@ -12,13 +12,15 @@ body {
   display: flex;
 }
 
-header .container {
-  flex-direction: column;
-  background: url(/img/Layer2.png);
-  text-align: center;
+header {
+  background-image: url(/img/Layer2.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+header .container {
+  flex-direction: column;
+  text-align: center;
 }
 header .container .top h1 {
   font-family: "Raleway", sans-serif;
@@ -162,7 +164,7 @@ header .container .bot .btnDown span:hover {
   transition: 0.5s;
 }
 
-.goals .container {
+.goals {
   background-color: #eeeeee;
 }
 .goals .container .items {
@@ -328,6 +330,40 @@ header .container .bot .btnDown span:hover {
 .about .container .items .text-btn a:hover {
   transition: 1s;
   background-color: rgba(159, 68, 155, 0.7450980392);
+}
+
+.education {
+  background: url("/img/Layer 4.png");
+  background-size: cover;
+  background-position: center;
+}
+.education .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 160px 0;
+  row-gap: 20px;
+}
+.education .container .img {
+  position: relative;
+}
+.education .container .img div::after {
+  content: "";
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+}
+.education .container .img div:after {
+  background: url(/img/3/study.png) no-repeat;
+  transform: translate(-45%, -34%);
+}
+.education .container h2 {
+  font-size: 48px;
+  width: 40%;
+  text-align: center;
 }
 
 @keyframes animal-1 {
