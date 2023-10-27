@@ -28,14 +28,14 @@ header .container .top {
 }
 header .container .top h1 {
   font-family: "Raleway", sans-serif;
-  font-size: 90px;
+  font-size: clamp(3.5rem, 10vw, 6rem);
 }
 header .container .top h1 span {
   color: #9f449b;
 }
 header .container .top .fusce h4 {
   font-size: 48px;
-  line-height: 24px;
+  line-height: 100%;
 }
 header .container .top .fusce p {
   font-size: 24px;
@@ -1007,6 +1007,18 @@ footer .container .form .links a {
   }
   100% {
     transform: scale(1.05);
+  }
+}
+@media screen and (max-width: 1091px) {
+  header .one,
+  header .two,
+  header .fhree {
+    align-self: flex-start !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  header .bot {
+    row-gap: 150px;
   }
 }
 

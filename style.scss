@@ -26,7 +26,7 @@ header {
             color: #fff;
             h1 {
                 font-family: 'Raleway', sans-serif;
-                font-size: 90px;
+                font-size: clamp(3.5rem, 10vw, 6rem); 
                 span {
                     color: $activ_color;
                 }
@@ -34,7 +34,7 @@ header {
             .fusce {
                 h4 {
                     font-size: 48px;
-                    line-height: 24px;
+                    line-height: 100%;
                 }
                 p {
                     font-size: 24px;
@@ -1020,5 +1020,22 @@ footer {
     }
     100% {
         transform: scale(1.05);
+    }
+}
+
+@media screen and (max-width: 1091px) {
+    header {
+        .one,
+        .two,
+        .fhree {
+            align-self: flex-start !important;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    header {
+        .bot {
+            row-gap: 150px;
+        }
     }
 }
