@@ -286,8 +286,8 @@ header .container .bot .btnDown span:hover {
 .about .container h1:after {
   content: "";
   position: absolute;
-  top: 10%;
-  left: 120%;
+  top: -5%;
+  left: 115%;
   transform: translate(-50%, -50%);
   background: url(img/2/Shape\ 6.png) no-repeat;
   height: 30px;
@@ -298,7 +298,7 @@ header .container .bot .btnDown span:hover {
   content: "";
   position: absolute;
   left: -30%;
-  top: 80%;
+  bottom: -20%;
   transform: translate(-50%, -50%);
   background: url(img/2/Shape\ 6.png) no-repeat;
   height: 30px;
@@ -394,16 +394,14 @@ header .container .bot .btnDown span:hover {
 }
 .education .container h2,
 .services .container h2 {
-  font-size: 48px;
-  width: 40%;
+  font-size: clamp(1rem, 10vw, 4rem);
+  width: 90%;
   text-align: center;
+  color: #fff;
 }
 
 .education .img div:after {
   background: url(/img/3/study.png) no-repeat;
-}
-.education h2 {
-  color: #fff;
 }
 
 .team .container {
@@ -413,10 +411,10 @@ header .container .bot .btnDown span:hover {
   margin-top: 180px;
 }
 .team .container h1 {
-  font-size: 68px;
-  color: #676767;
-  padding: 35px;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  color: #000;
   position: relative;
+  color: #676767;
 }
 .team .container h1 span {
   color: #9f449b;
@@ -424,23 +422,23 @@ header .container .bot .btnDown span:hover {
 .team .container h1:after {
   content: "";
   position: absolute;
-  top: 20%;
-  left: 120%;
+  top: -5%;
+  left: 115%;
   transform: translate(-50%, -50%);
   background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 40px;
-  width: 30px;
+  height: 30px;
+  width: 40px;
   transform: scale(2);
 }
 .team .container h1:before {
   content: "";
   position: absolute;
-  left: -20%;
-  top: 80%;
+  left: -30%;
+  bottom: -20%;
   transform: translate(-50%, -50%);
   background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 40px;
-  width: 30px;
+  height: 30px;
+  width: 40px;
   transform: rotate(180deg) scale(2);
 }
 .team .container .btn {
@@ -517,10 +515,10 @@ header .container .bot .btnDown span:hover {
   margin-top: 180px;
 }
 .skills .container h1 {
-  font-size: 68px;
-  color: #676767;
-  padding: 35px;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  color: #000;
   position: relative;
+  color: #676767;
 }
 .skills .container h1 span {
   color: #9f449b;
@@ -528,23 +526,23 @@ header .container .bot .btnDown span:hover {
 .skills .container h1:after {
   content: "";
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 120%;
   transform: translate(-50%, -50%);
   background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 40px;
-  width: 30px;
+  height: 30px;
+  width: 40px;
   transform: scale(2);
 }
 .skills .container h1:before {
   content: "";
   position: absolute;
-  left: -20%;
+  left: -30%;
   top: 80%;
   transform: translate(-50%, -50%);
   background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 40px;
-  width: 30px;
+  height: 30px;
+  width: 40px;
   transform: rotate(180deg) scale(2);
 }
 .skills .container .items {
@@ -637,6 +635,9 @@ header .container .bot .btnDown span:hover {
   display: flex;
   justify-content: space-around;
   padding: 150px 0;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 50px;
 }
 .quotes .container .items .item label {
   display: flex;
@@ -670,8 +671,8 @@ header .container .bot .btnDown span:hover {
   display: none;
 }
 .quotes .container .cards .card h2 {
-  font-size: 33px;
-  width: 60%;
+  font-size: clamp(1.5rem, 10vw, 2.5rem);
+  width: 70%;
   text-align: center;
 }
 .quotes .container .cards .card p {
@@ -700,9 +701,8 @@ header .container .bot .btnDown span:hover {
   margin-top: 180px;
 }
 .portfolio .container h1 {
-  font-size: 68px;
+  font-size: clamp(2.5rem, 10vw, 5rem);
   color: #676767;
-  padding: 35px;
   position: relative;
 }
 .portfolio .container h1 span {
@@ -711,31 +711,32 @@ header .container .bot .btnDown span:hover {
 .portfolio .container h1:after {
   content: "";
   position: absolute;
-  top: 20%;
-  left: 120%;
+  top: -5%;
+  left: 115%;
   transform: translate(-50%, -50%);
   background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 40px;
-  width: 30px;
+  height: 30px;
+  width: 40px;
   transform: scale(2);
 }
 .portfolio .container h1:before {
   content: "";
   position: absolute;
-  left: -20%;
-  top: 80%;
+  left: -30%;
+  bottom: -20%;
   transform: translate(-50%, -50%);
   background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 40px;
-  width: 30px;
+  height: 30px;
+  width: 40px;
   transform: rotate(180deg) scale(2);
 }
 .portfolio .container .btns {
   display: flex;
-  column-gap: 20px;
+  gap: 50px;
   margin: 100px 0 100px;
   width: 100%;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .portfolio .container .btns a {
   color: #000;
@@ -805,9 +806,8 @@ footer .container {
 }
 footer .container h1,
 footer .container h2 {
-  font-size: 68px;
+  font-size: clamp(2.5rem, 10vw, 5rem);
   color: #676767;
-  padding: 35px;
   position: relative;
 }
 footer .container h1 span,
@@ -817,23 +817,23 @@ footer .container h2 span {
 footer .container h1:after {
   content: "";
   position: absolute;
-  top: 20%;
-  left: 120%;
+  top: -5%;
+  left: 115%;
   transform: translate(-50%, -50%);
   background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 40px;
-  width: 30px;
+  height: 30px;
+  width: 40px;
   transform: scale(2);
 }
 footer .container h1:before {
   content: "";
   position: absolute;
-  left: -20%;
-  top: 80%;
+  left: -30%;
+  bottom: -20%;
   transform: translate(-50%, -50%);
   background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 40px;
-  width: 30px;
+  height: 30px;
+  width: 40px;
   transform: rotate(180deg) scale(2);
 }
 footer .container .form {
@@ -874,12 +874,12 @@ footer .container .form .blanck [type=submit] {
   top: 95%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 50px;
-  margin-bottom: 80px;
+  padding: 10px 10px;
+  margin: 80px 0;
   width: 50%;
   text-align: center;
   color: #000;
-  font-size: 32px;
+  font-size: clamp(0.8rem, 10vw, 1.7rem);
   text-decoration: none;
   border-radius: 5px;
   background-color: #9f449b;
@@ -1023,20 +1023,14 @@ footer .container .form .links a {
     text-align: center !important;
     transform: scale(0.8);
   }
-  .about .items .pic img:first-child {
-    width: 80%;
-  }
   .about .items .pic img:nth-child(2) {
     transform: translate(-150%, 10%) !important;
-    width: 30%;
   }
   .about .items .pic img:nth-child(3) {
     transform: translate(0%, 50%) !important;
-    width: 50%;
   }
   .about .items .pic img:nth-child(4) {
     transform: translate(-150%, 50%) !important;
-    width: 15%;
   }
 }
 @media screen and (max-width: 1091px) {
@@ -1050,6 +1044,17 @@ footer .container .form .links a {
   .goals .items {
     flex-wrap: wrap;
     row-gap: 50px;
+  }
+  footer .form {
+    flex-wrap: wrap;
+    row-gap: 100px;
+  }
+  footer .form form {
+    width: 80%;
+  }
+  footer .links {
+    flex-direction: row !important;
+    column-gap: 50px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1070,6 +1075,21 @@ footer .container .form .links a {
   }
   .about .pic img:nth-child(4) {
     width: 15%;
+  }
+  .team h1 {
+    margin: 0 !important;
+  }
+  .team .btn {
+    margin: 100px 0 50px !important;
+  }
+  .team .items {
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 50px;
+  }
+  .skills .top,
+  .skills .bottom {
+    flex-wrap: wrap;
   }
 }
 

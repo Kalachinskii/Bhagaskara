@@ -279,8 +279,8 @@ header {
         h1:after {
             content: '';
             position: absolute;
-            top: 10%;
-            left: 120%;
+            top: -5%;
+            left: 115%;
             transform: translate(-50%, -50%);
             background: url(img/2/Shape\ 6.png) no-repeat;
             height: 30px;
@@ -291,7 +291,7 @@ header {
             content: '';
             position: absolute;
             left: -30%;
-            top: 80%;
+            bottom: -20%;
             transform: translate(-50%, -50%);
             background: url(img/2/Shape\ 6.png) no-repeat;
             height: 30px;
@@ -381,9 +381,10 @@ header {
             }
         }
         h2 {
-            font-size: 48px;
-            width: 40%;
+            font-size: clamp(1rem, 10vw, 4rem); ;
+            width: 90%;
             text-align: center;
+            color: #fff;
         }
     }
 }
@@ -393,9 +394,6 @@ header {
             background: url(/img/3/study.png) no-repeat;
         }
     }
-    h2 {
-        color: #fff;
-    }
 }
 .team {
     .container {
@@ -404,10 +402,10 @@ header {
         align-items: center;
         margin-top: 180px;
         h1 {
-            font-size: 68px;
-            color: #676767;
-            padding: 35px;
+            font-size: clamp(2.5rem, 10vw, 5rem); 
+            color: #000;
             position: relative;
+            color: #676767;
             span {
                 color: $activ_color;
             }
@@ -415,23 +413,23 @@ header {
         h1:after {
             content: '';
             position: absolute;
-            top: 20%;
-            left: 120%;
+            top: -5%;
+            left: 115%;
             transform: translate(-50%, -50%);
             background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 40px;
-            width: 30px;
+            height: 30px;
+            width: 40px;
             transform:scale(2);
         }
         h1:before {
             content: '';
             position: absolute;
-            left: -20%;
-            top: 80%;
+            left: -30%;
+            bottom: -20%;
             transform: translate(-50%, -50%);
             background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 40px;
-            width: 30px;
+            height: 30px;
+            width: 40px;
             transform:rotate(180deg) scale(2);
         }
         .btn {
@@ -516,10 +514,10 @@ header {
         align-items: center;
         margin-top: 180px;
         h1 {
-            font-size: 68px;
-            color: #676767;
-            padding: 35px;
+            font-size: clamp(2.5rem, 10vw, 5rem); 
+            color: #000;
             position: relative;
+            color: #676767;
             span {
                 color: $activ_color;
             }
@@ -527,23 +525,23 @@ header {
         h1:after {
             content: '';
             position: absolute;
-            top: 20%;
+            top: 10%;
             left: 120%;
             transform: translate(-50%, -50%);
             background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 40px;
-            width: 30px;
+            height: 30px;
+            width: 40px;
             transform:scale(2);
         }
         h1:before {
             content: '';
             position: absolute;
-            left: -20%;
+            left: -30%;
             top: 80%;
             transform: translate(-50%, -50%);
             background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 40px;
-            width: 30px;
+            height: 30px;
+            width: 40px;
             transform:rotate(180deg) scale(2);
         }
         .items {
@@ -594,7 +592,6 @@ header {
                         height: 100%;
                         transition: 3s;
                         position: absolute;
-                        
                     }
                 }
             }
@@ -638,6 +635,9 @@ header {
             display: flex;
             justify-content: space-around;
             padding: 150px 0;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 50px;
             .item {
                 label {
                     display: flex;
@@ -671,8 +671,8 @@ header {
                 padding-bottom: 50px;
                 display: none;
                 h2 {
-                    font-size: 33px;
-                    width: 60%;
+                    font-size: clamp(1.5rem, 10vw, 2.5rem);
+                    width: 70%;
                     text-align: center;
                 }
                 p {
@@ -704,9 +704,8 @@ header {
         align-items: center;
         margin-top: 180px;
         h1 {
-            font-size: 68px;
+            font-size: clamp(2.5rem, 10vw, 5rem); 
             color: #676767;
-            padding: 35px;
             position: relative;
             span {
                 color: $activ_color;
@@ -715,31 +714,32 @@ header {
         h1:after {
             content: '';
             position: absolute;
-            top: 20%;
-            left: 120%;
+            top: -5%;
+            left: 115%;
             transform: translate(-50%, -50%);
             background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 40px;
-            width: 30px;
+            height: 30px;
+            width: 40px;
             transform:scale(2);
         }
         h1:before {
             content: '';
             position: absolute;
-            left: -20%;
-            top: 80%;
+            left: -30%;
+            bottom: -20%;
             transform: translate(-50%, -50%);
             background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 40px;
-            width: 30px;
+            height: 30px;
+            width: 40px;
             transform:rotate(180deg) scale(2);
         }
         .btns {
             display: flex;
-            column-gap: 20px;
+            gap: 50px;
             margin: 100px 0 100px;
             width: 100%;
             justify-content: center;
+            flex-wrap: wrap;
             a {
                 color: #000;
                 font-size: 32px;
@@ -812,9 +812,8 @@ footer {
         align-items: center;
         h1,
         h2 {
-            font-size: 68px;
+            font-size: clamp(2.5rem, 10vw, 5rem); 
             color: #676767;
-            padding: 35px;
             position: relative;
             span {
                 color: $activ_color;
@@ -823,23 +822,23 @@ footer {
         h1:after {
             content: '';
             position: absolute;
-            top: 20%;
-            left: 120%;
+            top: -5%;
+            left: 115%;
             transform: translate(-50%, -50%);
             background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 40px;
-            width: 30px;
+            height: 30px;
+            width: 40px;
             transform:scale(2);
         }
         h1:before {
             content: '';
             position: absolute;
-            left: -20%;
-            top: 80%;
+            left: -30%;
+            bottom: -20%;
             transform: translate(-50%, -50%);
             background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 40px;
-            width: 30px;
+            height: 30px;
+            width: 40px;
             transform:rotate(180deg) scale(2);
         }
         .form {
@@ -878,12 +877,12 @@ footer {
                     top: 95%;
                     left: 50%;
                     transform: translate(-50%,-50%);
-                    height: 50px;
-                    margin-bottom: 80px;
+                    padding: 10px 10px;
+                    margin: 80px 0;
                     width: 50%;
                     text-align: center;
                     color: #000;
-                    font-size: 32px;
+                    font-size: clamp(0.8rem, 10vw, 1.7rem);
                     text-decoration: none;
                     border-radius: 5px;
                     background-color: $activ_color;
@@ -1036,20 +1035,14 @@ footer {
                 padding-top: 15%;
                 text-align: center !important;
                 transform: scale(0.8);
-                    img:first-child {
-                        width: 80%;      
-                    }
                     img:nth-child(2) {
                         transform: translate(-150%,10%) !important;
-                        width: 30%;
                     }
                     img:nth-child(3) {
                         transform: translate(0%,50%) !important;
-                        width: 50%;
                     }
                     img:nth-child(4) {
                         transform: translate(-150%,50%) !important;
-                        width: 15%;
                 }
             }
         }
@@ -1070,6 +1063,19 @@ footer {
             flex-wrap: wrap;
             row-gap: 50px;
        }
+    }
+    footer {
+        .form {
+            flex-wrap: wrap;
+            row-gap: 100px;
+            form {
+                width: 80%;
+            }
+        }
+        .links {
+            flex-direction: row !important;
+            column-gap: 50px;
+        }
     }
 }
 @media screen and (max-width: 768px) {
@@ -1095,6 +1101,25 @@ footer {
             img:nth-child(4) {
                 width: 15%;
             }
+        }
+    }
+    .team {
+        h1 {
+            margin: 0 !important;
+        }
+        .btn {
+            margin: 100px 0 50px !important;
+        }
+        .items {
+            flex-wrap: wrap;
+            column-gap: 20px;
+            row-gap: 50px;
+        }
+    }
+    .skills {
+        .top,
+        .bottom {
+            flex-wrap: wrap;
         }
     }
 }
