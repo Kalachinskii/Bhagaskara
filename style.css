@@ -176,11 +176,11 @@ header .container .bot .btnDown span:hover {
   background-color: #eeeeee;
 }
 .goals .container .items {
-  align-items: center;
+  padding-top: 50px;
   display: flex;
   color: #000;
-  height: 800px;
   text-align: center;
+  justify-content: center;
 }
 .goals .container .items .one,
 .goals .container .items .two,
@@ -238,6 +238,7 @@ header .container .bot .btnDown span:hover {
 .goals .container .items .fhree h2,
 .goals .container .items .four h2 {
   color: #676767;
+  line-height: 0;
 }
 .goals .container .items .one p,
 .goals .container .items .two p,
@@ -270,11 +271,13 @@ header .container .bot .btnDown span:hover {
   flex-direction: column;
   align-items: center;
   margin-top: 180px;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 .about .container h1 {
-  font-size: 68px;
+  font-size: clamp(2.5rem, 10vw, 5rem);
   color: #000;
-  padding: 35px;
   position: relative;
 }
 .about .container h1 span {
@@ -283,32 +286,32 @@ header .container .bot .btnDown span:hover {
 .about .container h1:after {
   content: "";
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 120%;
   transform: translate(-50%, -50%);
   background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 40px;
-  width: 30px;
+  height: 30px;
+  width: 40px;
   transform: scale(2);
 }
 .about .container h1:before {
   content: "";
   position: absolute;
-  left: -20%;
+  left: -30%;
   top: 80%;
   transform: translate(-50%, -50%);
   background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 40px;
-  width: 30px;
+  height: 30px;
+  width: 40px;
   transform: rotate(180deg) scale(2);
 }
 .about .container .items {
-  height: 1030px;
   display: flex;
   color: #000;
   column-gap: 10%;
 }
 .about .container .items .pic {
+  padding-left: 5%;
   position: relative;
   align-self: center;
   width: 100%;
@@ -320,22 +323,24 @@ header .container .bot .btnDown span:hover {
   left: 50%;
 }
 .about .container .items .pic img:nth-child(2) {
-  transform: translate(-40%, 0%);
+  transform: translate(-100%, 0%);
 }
 .about .container .items .pic img:nth-child(3) {
-  transform: translate(40%, 0%);
+  transform: translate(10%, 0%);
 }
 .about .container .items .pic img:nth-child(4) {
-  transform: translate(100%, 100%);
+  transform: translate(0%, 100%);
 }
 .about .container .items .text-btn {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 5% 5% 25% 5%;
 }
 .about .container .items .text-btn p {
-  font-size: 32px;
+  width: 100%;
+  font-size: clamp(0.5rem, 5vw, 1.6rem);
   font-family: "Myriad Pro";
   color: rgb(103, 103, 103);
   line-height: 2.25;
@@ -1009,6 +1014,31 @@ footer .container .form .links a {
     transform: scale(1.05);
   }
 }
+@media screen and (max-width: 1200px) {
+  .about .items {
+    flex-wrap: wrap;
+  }
+  .about .items .pic {
+    padding-top: 15%;
+    text-align: center !important;
+    transform: scale(0.8);
+  }
+  .about .items .pic img:first-child {
+    width: 80%;
+  }
+  .about .items .pic img:nth-child(2) {
+    transform: translate(-150%, 10%) !important;
+    width: 30%;
+  }
+  .about .items .pic img:nth-child(3) {
+    transform: translate(0%, 50%) !important;
+    width: 50%;
+  }
+  .about .items .pic img:nth-child(4) {
+    transform: translate(-150%, 50%) !important;
+    width: 15%;
+  }
+}
 @media screen and (max-width: 1091px) {
   header .one,
   header .two,
@@ -1016,9 +1046,30 @@ footer .container .form .links a {
     align-self: flex-start !important;
   }
 }
+@media screen and (max-width: 992px) {
+  .goals .items {
+    flex-wrap: wrap;
+    row-gap: 50px;
+  }
+}
 @media screen and (max-width: 768px) {
   header .bot {
     row-gap: 150px;
+  }
+  .about h1 {
+    text-align: center !important;
+  }
+  .about .pic img:first-child {
+    width: 80%;
+  }
+  .about .pic img:nth-child(2) {
+    width: 30%;
+  }
+  .about .pic img:nth-child(3) {
+    width: 50%;
+  }
+  .about .pic img:nth-child(4) {
+    width: 15%;
   }
 }
 

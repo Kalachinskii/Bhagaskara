@@ -181,11 +181,11 @@ header {
     background-color: #eeeeee;
     .container {
         .items {
-            align-items: center;
+            padding-top: 50px;
             display: flex;
             color: #000;
-            height: 800px;
             text-align: center;
+            justify-content: center; 
             .one,
             .two,
             .fhree,
@@ -223,6 +223,7 @@ header {
                 }
                 h2 {
                     color: #676767;
+                    line-height: 0;
                 }
                 p {
                     font-size: 18px;
@@ -264,10 +265,12 @@ header {
         flex-direction: column;
         align-items: center;
         margin-top: 180px;
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow: hidden;
         h1 {
-            font-size: 68px;
+            font-size: clamp(2.5rem, 10vw, 5rem); 
             color: #000;
-            padding: 35px;
             position: relative;
             span {
                 color: $activ_color;
@@ -276,31 +279,31 @@ header {
         h1:after {
             content: '';
             position: absolute;
-            top: 20%;
+            top: 10%;
             left: 120%;
             transform: translate(-50%, -50%);
             background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 40px;
-            width: 30px;
+            height: 30px;
+            width: 40px;
             transform:scale(2);
         }
         h1:before {
             content: '';
             position: absolute;
-            left: -20%;
+            left: -30%;
             top: 80%;
             transform: translate(-50%, -50%);
             background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 40px;
-            width: 30px;
+            height: 30px;
+            width: 40px;
             transform:rotate(180deg) scale(2);
         }
         .items {
-            height: 1030px;
             display: flex;
             color: #000;
             column-gap: 10%;
             .pic {
+                padding-left: 5%;
                 position: relative;
                 align-self: center;
                 width: 100%;
@@ -311,13 +314,13 @@ header {
                     left: 50%;         
                 }
                 img:nth-child(2) {
-                    transform: translate(-40%,0%);
+                    transform: translate(-100%,0%);
                 }
                 img:nth-child(3) {
-                    transform: translate(40%,-0%);
+                    transform: translate(10%,-0%);
                 }
                 img:nth-child(4) {
-                    transform: translate(100%,100%);
+                    transform: translate(0%,100%);
                 }
             }
             .text-btn {
@@ -325,8 +328,10 @@ header {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                padding: 5% 5% 25% 5%;
                 p {
-                    font-size: 32px;
+                    width: 100%;
+                    font-size: clamp(0.5rem, 5vw, 1.6rem); 
                     font-family: "Myriad Pro";
                     color: rgb(103, 103, 103);
                     line-height: 2.25;
@@ -1023,6 +1028,33 @@ footer {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .about {
+        .items {
+            flex-wrap: wrap;
+            .pic {
+                padding-top: 15%;
+                text-align: center !important;
+                transform: scale(0.8);
+                    img:first-child {
+                        width: 80%;      
+                    }
+                    img:nth-child(2) {
+                        transform: translate(-150%,10%) !important;
+                        width: 30%;
+                    }
+                    img:nth-child(3) {
+                        transform: translate(0%,50%) !important;
+                        width: 50%;
+                    }
+                    img:nth-child(4) {
+                        transform: translate(-150%,50%) !important;
+                        width: 15%;
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width: 1091px) {
     header {
         .one,
@@ -1032,10 +1064,37 @@ footer {
         }
     }
 }
+@media screen and (max-width: 992px) {
+    .goals {
+        .items {
+            flex-wrap: wrap;
+            row-gap: 50px;
+       }
+    }
+}
 @media screen and (max-width: 768px) {
     header {
         .bot {
             row-gap: 150px;
+        }
+    }
+    .about {
+        h1 {
+            text-align: center !important;
+        }
+        .pic {
+            img:first-child {
+                width: 80%;      
+            }
+            img:nth-child(2) {
+                width: 30%;
+            }
+            img:nth-child(3) {
+                width: 50%;
+            }
+            img:nth-child(4) {
+                width: 15%;
+            }
         }
     }
 }
