@@ -14,6 +14,44 @@ body{
     display: flex;
 }
 
+.about,
+.team,
+.skills,
+.portfolio,
+footer {
+    h1 {
+        font-size: clamp(2.5rem, 10vw, 5rem); 
+        color: #676767;
+        position: relative;
+        span {
+            color: $activ_color;
+        }
+    }
+    h1:after {
+        content: '';
+        position: absolute;
+        top: -5%;
+        left: 115%;
+        transform: translate(-50%, -50%);
+        background: url(img/2/Shape\ 6.png) no-repeat;
+        height: 30px;
+        width: 40px;
+        transform:scale(2);
+    }
+    h1:before {
+        content: '';
+        position: absolute;
+        left: -30%;
+        bottom: -20%;
+        transform: translate(-50%, -50%);
+        background: url(img/2/Shape\ 6.png) no-repeat;
+        height: 30px;
+        width: 40px;
+        transform:rotate(180deg) scale(2);
+    }
+}
+
+
 header {
     background-image: url(/img/Layer2.png);
     background-size:cover;
@@ -261,43 +299,12 @@ header {
 }
 .about {
     .container {
-        display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 180px;
         justify-content: center;
         flex-wrap: wrap;
         overflow: hidden;
-        h1 {
-            font-size: clamp(2.5rem, 10vw, 5rem); 
-            color: #000;
-            position: relative;
-            span {
-                color: $activ_color;
-            }
-        }
-        h1:after {
-            content: '';
-            position: absolute;
-            top: -5%;
-            left: 115%;
-            transform: translate(-50%, -50%);
-            background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 30px;
-            width: 40px;
-            transform:scale(2);
-        }
-        h1:before {
-            content: '';
-            position: absolute;
-            left: -30%;
-            bottom: -20%;
-            transform: translate(-50%, -50%);
-            background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 30px;
-            width: 40px;
-            transform:rotate(180deg) scale(2);
-        }
         .items {
             display: flex;
             color: #000;
@@ -360,7 +367,6 @@ header {
     background-size: cover;
     background-position: center;    
     .container {
-        display: flex;
         flex-direction: column;
         align-items: center;
         padding: 160px 0;
@@ -397,41 +403,9 @@ header {
 }
 .team {
     .container {
-        display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 180px;
-        h1 {
-            font-size: clamp(2.5rem, 10vw, 5rem); 
-            color: #000;
-            position: relative;
-            color: #676767;
-            span {
-                color: $activ_color;
-            }
-        }
-        h1:after {
-            content: '';
-            position: absolute;
-            top: -5%;
-            left: 115%;
-            transform: translate(-50%, -50%);
-            background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 30px;
-            width: 40px;
-            transform:scale(2);
-        }
-        h1:before {
-            content: '';
-            position: absolute;
-            left: -30%;
-            bottom: -20%;
-            transform: translate(-50%, -50%);
-            background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 30px;
-            width: 40px;
-            transform:rotate(180deg) scale(2);
-        }
         .btn {
             margin: 140px 0;
             display: flex;
@@ -509,41 +483,9 @@ header {
 }
 .skills {
     .container {
-        display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 180px;
-        h1 {
-            font-size: clamp(2.5rem, 10vw, 5rem); 
-            color: #000;
-            position: relative;
-            color: #676767;
-            span {
-                color: $activ_color;
-            }
-        }
-        h1:after {
-            content: '';
-            position: absolute;
-            top: 10%;
-            left: 120%;
-            transform: translate(-50%, -50%);
-            background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 30px;
-            width: 40px;
-            transform:scale(2);
-        }
-        h1:before {
-            content: '';
-            position: absolute;
-            left: -30%;
-            top: 80%;
-            transform: translate(-50%, -50%);
-            background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 30px;
-            width: 40px;
-            transform:rotate(180deg) scale(2);
-        }
         .items {
             margin: 150px 0;
             color: #000;
@@ -628,10 +570,8 @@ header {
 .quotes {
     background-color: #eeeeee;
     .container {
-        display: flex;
         flex-direction: column;
         .items {
-            color: #000; 
             display: flex;
             justify-content: space-around;
             padding: 150px 0;
@@ -646,6 +586,7 @@ header {
                     span {
                         font-size: 64px;
                         font-weight: bold;
+                        color: #222222db;
                         }
                     p {
                         color: #676767;
@@ -655,7 +596,6 @@ header {
             }
         }
         .cards {
-            color: #000;
             display: flex;
             flex-direction: column;
             row-gap: 20px;
@@ -674,6 +614,7 @@ header {
                     font-size: clamp(1.5rem, 10vw, 2.5rem);
                     width: 70%;
                     text-align: center;
+                    color: #4b4b4b;
                 }
                 p {
                     font-size: 20px;
@@ -699,40 +640,9 @@ header {
 }
 .portfolio {
     .container {
-        display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 180px;
-        h1 {
-            font-size: clamp(2.5rem, 10vw, 5rem); 
-            color: #676767;
-            position: relative;
-            span {
-                color: $activ_color;
-            }
-        }
-        h1:after {
-            content: '';
-            position: absolute;
-            top: -5%;
-            left: 115%;
-            transform: translate(-50%, -50%);
-            background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 30px;
-            width: 40px;
-            transform:scale(2);
-        }
-        h1:before {
-            content: '';
-            position: absolute;
-            left: -30%;
-            bottom: -20%;
-            transform: translate(-50%, -50%);
-            background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 30px;
-            width: 40px;
-            transform:rotate(180deg) scale(2);
-        }
         .btns {
             display: flex;
             gap: 50px;
@@ -764,6 +674,7 @@ header {
             text-align: center;
             width: 75%;
             row-gap: 80px;
+            column-gap: 30px;
             margin-bottom: 80px;
             .item {
                 overflow: hidden;
@@ -810,7 +721,6 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        h1,
         h2 {
             font-size: clamp(2.5rem, 10vw, 5rem); 
             color: #676767;
@@ -818,28 +728,6 @@ footer {
             span {
                 color: $activ_color;
             }
-        }
-        h1:after {
-            content: '';
-            position: absolute;
-            top: -5%;
-            left: 115%;
-            transform: translate(-50%, -50%);
-            background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 30px;
-            width: 40px;
-            transform:scale(2);
-        }
-        h1:before {
-            content: '';
-            position: absolute;
-            left: -30%;
-            bottom: -20%;
-            transform: translate(-50%, -50%);
-            background: url(img/2/Shape\ 6.png) no-repeat;
-            height: 30px;
-            width: 40px;
-            transform:rotate(180deg) scale(2);
         }
         .form {
             margin: 100px 0 150px;

@@ -13,6 +13,53 @@ body {
   display: flex;
 }
 
+.about h1,
+.team h1,
+.skills h1,
+.portfolio h1,
+footer h1 {
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  color: #676767;
+  position: relative;
+}
+.about h1 span,
+.team h1 span,
+.skills h1 span,
+.portfolio h1 span,
+footer h1 span {
+  color: #9f449b;
+}
+.about h1:after,
+.team h1:after,
+.skills h1:after,
+.portfolio h1:after,
+footer h1:after {
+  content: "";
+  position: absolute;
+  top: -5%;
+  left: 115%;
+  transform: translate(-50%, -50%);
+  background: url(img/2/Shape\ 6.png) no-repeat;
+  height: 30px;
+  width: 40px;
+  transform: scale(2);
+}
+.about h1:before,
+.team h1:before,
+.skills h1:before,
+.portfolio h1:before,
+footer h1:before {
+  content: "";
+  position: absolute;
+  left: -30%;
+  bottom: -20%;
+  transform: translate(-50%, -50%);
+  background: url(img/2/Shape\ 6.png) no-repeat;
+  height: 30px;
+  width: 40px;
+  transform: rotate(180deg) scale(2);
+}
+
 header {
   background-image: url(/img/Layer2.png);
   background-size: cover;
@@ -267,43 +314,12 @@ header .container .bot .btnDown span:hover {
 }
 
 .about .container {
-  display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 180px;
   justify-content: center;
   flex-wrap: wrap;
   overflow: hidden;
-}
-.about .container h1 {
-  font-size: clamp(2.5rem, 10vw, 5rem);
-  color: #000;
-  position: relative;
-}
-.about .container h1 span {
-  color: #9f449b;
-}
-.about .container h1:after {
-  content: "";
-  position: absolute;
-  top: -5%;
-  left: 115%;
-  transform: translate(-50%, -50%);
-  background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 30px;
-  width: 40px;
-  transform: scale(2);
-}
-.about .container h1:before {
-  content: "";
-  position: absolute;
-  left: -30%;
-  bottom: -20%;
-  transform: translate(-50%, -50%);
-  background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 30px;
-  width: 40px;
-  transform: rotate(180deg) scale(2);
 }
 .about .container .items {
   display: flex;
@@ -368,7 +384,6 @@ header .container .bot .btnDown span:hover {
 }
 .education .container,
 .services .container {
-  display: flex;
   flex-direction: column;
   align-items: center;
   padding: 160px 0;
@@ -405,41 +420,9 @@ header .container .bot .btnDown span:hover {
 }
 
 .team .container {
-  display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 180px;
-}
-.team .container h1 {
-  font-size: clamp(2.5rem, 10vw, 5rem);
-  color: #000;
-  position: relative;
-  color: #676767;
-}
-.team .container h1 span {
-  color: #9f449b;
-}
-.team .container h1:after {
-  content: "";
-  position: absolute;
-  top: -5%;
-  left: 115%;
-  transform: translate(-50%, -50%);
-  background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 30px;
-  width: 40px;
-  transform: scale(2);
-}
-.team .container h1:before {
-  content: "";
-  position: absolute;
-  left: -30%;
-  bottom: -20%;
-  transform: translate(-50%, -50%);
-  background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 30px;
-  width: 40px;
-  transform: rotate(180deg) scale(2);
 }
 .team .container .btn {
   margin: 140px 0;
@@ -509,41 +492,9 @@ header .container .bot .btnDown span:hover {
 }
 
 .skills .container {
-  display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 180px;
-}
-.skills .container h1 {
-  font-size: clamp(2.5rem, 10vw, 5rem);
-  color: #000;
-  position: relative;
-  color: #676767;
-}
-.skills .container h1 span {
-  color: #9f449b;
-}
-.skills .container h1:after {
-  content: "";
-  position: absolute;
-  top: 10%;
-  left: 120%;
-  transform: translate(-50%, -50%);
-  background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 30px;
-  width: 40px;
-  transform: scale(2);
-}
-.skills .container h1:before {
-  content: "";
-  position: absolute;
-  left: -30%;
-  top: 80%;
-  transform: translate(-50%, -50%);
-  background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 30px;
-  width: 40px;
-  transform: rotate(180deg) scale(2);
 }
 .skills .container .items {
   margin: 150px 0;
@@ -627,11 +578,9 @@ header .container .bot .btnDown span:hover {
   background-color: #eeeeee;
 }
 .quotes .container {
-  display: flex;
   flex-direction: column;
 }
 .quotes .container .items {
-  color: #000;
   display: flex;
   justify-content: space-around;
   padding: 150px 0;
@@ -647,13 +596,13 @@ header .container .bot .btnDown span:hover {
 .quotes .container .items .item label span {
   font-size: 64px;
   font-weight: bold;
+  color: rgba(34, 34, 34, 0.8588235294);
 }
 .quotes .container .items .item label p {
   color: #676767;
   text-align: center;
 }
 .quotes .container .cards {
-  color: #000;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
@@ -674,6 +623,7 @@ header .container .bot .btnDown span:hover {
   font-size: clamp(1.5rem, 10vw, 2.5rem);
   width: 70%;
   text-align: center;
+  color: #4b4b4b;
 }
 .quotes .container .cards .card p {
   font-size: 20px;
@@ -695,40 +645,9 @@ header .container .bot .btnDown span:hover {
 }
 
 .portfolio .container {
-  display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 180px;
-}
-.portfolio .container h1 {
-  font-size: clamp(2.5rem, 10vw, 5rem);
-  color: #676767;
-  position: relative;
-}
-.portfolio .container h1 span {
-  color: #9f449b;
-}
-.portfolio .container h1:after {
-  content: "";
-  position: absolute;
-  top: -5%;
-  left: 115%;
-  transform: translate(-50%, -50%);
-  background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 30px;
-  width: 40px;
-  transform: scale(2);
-}
-.portfolio .container h1:before {
-  content: "";
-  position: absolute;
-  left: -30%;
-  bottom: -20%;
-  transform: translate(-50%, -50%);
-  background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 30px;
-  width: 40px;
-  transform: rotate(180deg) scale(2);
 }
 .portfolio .container .btns {
   display: flex;
@@ -761,6 +680,7 @@ header .container .bot .btnDown span:hover {
   text-align: center;
   width: 75%;
   row-gap: 80px;
+  column-gap: 30px;
   margin-bottom: 80px;
 }
 .portfolio .container .items .item {
@@ -804,37 +724,13 @@ footer .container {
   flex-direction: column;
   align-items: center;
 }
-footer .container h1,
 footer .container h2 {
   font-size: clamp(2.5rem, 10vw, 5rem);
   color: #676767;
   position: relative;
 }
-footer .container h1 span,
 footer .container h2 span {
   color: #9f449b;
-}
-footer .container h1:after {
-  content: "";
-  position: absolute;
-  top: -5%;
-  left: 115%;
-  transform: translate(-50%, -50%);
-  background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 30px;
-  width: 40px;
-  transform: scale(2);
-}
-footer .container h1:before {
-  content: "";
-  position: absolute;
-  left: -30%;
-  bottom: -20%;
-  transform: translate(-50%, -50%);
-  background: url(img/2/Shape\ 6.png) no-repeat;
-  height: 30px;
-  width: 40px;
-  transform: rotate(180deg) scale(2);
 }
 footer .container .form {
   margin: 100px 0 150px;
