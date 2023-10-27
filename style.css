@@ -60,6 +60,18 @@ footer h1:before {
   transform: rotate(180deg) scale(2);
 }
 
+.about a,
+.portfolio a {
+  color: #000;
+  font-size: 32px;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 0.5% 2%;
+  align-self: start;
+  background-color: #9f449b;
+  box-shadow: 5px 5px 14px 5px #000;
+}
+
 header {
   background-image: url(/img/Layer2.png);
   background-size: cover;
@@ -361,16 +373,6 @@ header .container .bot .btnDown span:hover {
   color: rgb(103, 103, 103);
   line-height: 2.25;
 }
-.about .container .items .text-btn a {
-  color: #000;
-  font-size: 32px;
-  text-decoration: none;
-  border-radius: 5px;
-  padding: 2% 8%;
-  align-self: start;
-  background-color: #9f449b;
-  box-shadow: 5px 5px 14px 5px #000;
-}
 .about .container .items .text-btn a:hover {
   transition: 1s;
   background-color: rgba(159, 68, 155, 0.7450980392);
@@ -657,16 +659,6 @@ header .container .bot .btnDown span:hover {
   justify-content: center;
   flex-wrap: wrap;
 }
-.portfolio .container .btns a {
-  color: #000;
-  font-size: 32px;
-  text-decoration: none;
-  border-radius: 5px;
-  padding: 0.5% 2%;
-  align-self: start;
-  background-color: #9f449b;
-  box-shadow: 5px 5px 14px 5px #000;
-}
 .portfolio .container .btns a:hover {
   transition: 1s;
   background-color: rgba(159, 68, 155, 0.7450980392);
@@ -703,16 +695,6 @@ header .container .bot .btnDown span:hover {
   margin-bottom: 80px;
   width: 100%;
   text-align: center;
-}
-.portfolio .container .btn-bottom a {
-  color: #000;
-  font-size: 32px;
-  text-decoration: none;
-  border-radius: 5px;
-  padding: 0.5% 2%;
-  align-self: start;
-  background-color: #9f449b;
-  box-shadow: 5px 5px 14px 5px #000;
 }
 .portfolio .container .btn-bottom a:hover {
   transition: 1s;
