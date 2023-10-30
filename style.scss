@@ -416,78 +416,80 @@ header {
     .container {
         flex-direction: column;
         align-items: center;
-        padding: 180px 0;
-        .btn {
-            margin: 140px 0;
-            display: flex;
-            column-gap: 20px;
-            .right,
-            .left {
-                position: relative;
-                div::after {
-                    position: absolute;
-                    top: 45%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-                    color: $activ_color;
-                    font-size: 45px;
-                    cursor: pointer;
-                }
-
-            }
-            .right {
-                div::after {
-                    content: '\27A1';
-                }
-            }
-
-            .left {
-                div::after {
-                    content: '\2B05';    
-                }
-            }
-            
-            .left:hover > div::after {
-                animation: lefts 1s alternate infinite;
-            }
-            .right:hover > div::after {
-                animation: rights 1s alternate infinite;
-            }
-            .right:hover > input,
-            .left:hover > input {
-                transform: rotate(180deg);
-                transition: 3s;
-            }
-
+        padding: 180px 0 0;
+        h1 {
+            margin-bottom: 150px;
         }
-        .items {
-            color:#000;
+        .cards {
             display: flex;
-            justify-content: space-around;
-            width: 100%;
-            .item {
-                display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            .card {
                 flex-direction: column;
-                column-gap: 10px;
-                text-align: center;
-                h2 {
-                    font-size: 24px;
-                    color: #484848;
+                row-gap: 20px;
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 50px;
+                display: none;
+                img {
+                    width: 13%;
+                    height: 13%;
+                    border-radius: 50%;
+                    border: 5px solid #00000027;
+                    box-shadow: 0 0 55px 5px #676767;
                 }
                 label {
-                    font-size: 18px;
-                    color: #676767;
-                }
-                div>div {
+                    position: absolute;
+                    width: 10vh;
+                    height: 100%;
+                    font-size: clamp(1.875rem, -0.0781rem + 6.25vw, 3.4375rem);
                     display: flex;
-                    justify-content: center;
-                    column-gap: 30px;
-                    a {
-                        padding-top: 15px;
-                        font-size: 35px;
-                        color: $activ_color;
+                    justify-content: space-around;
+                    top: 50%;
+                    transform: translate(0%, -50%);
+                    cursor: pointer;
+                    i {
+                        color: rgba(173, 4, 162, 0.159);
+                        align-self: center;
+                        transition: 1s;
                     }
                 }
+                #left {
+                    left: 0%;
+                }
+                label:hover > i {
+                    color: rgba(173, 4, 162, 0.852);
+                    transform: scale3d(1.2,1.2,2);
+                }
+                #right {
+                    right: 0%;
+                }
+                h2 {
+                    // border: 1px solid red;
+                    height: 20vh;
+                    font-size: clamp(1.875rem, 0.7031rem + 3.75vw, 2.8125rem);
+                    width: 70%;
+                    text-align: center;
+                    color: #4b4b4b;
+                }
+                p {
+                    font-size: 20px;
+                    color: #676767;
+                }
+            }
+            .radio {
+                display: none;
+            }
+            .radio:has(input:nth-child(1):checked) ~ .card-1,
+            .radio:has(input:nth-child(2):checked) ~ .card-2,
+            .radio:has(input:nth-child(3):checked) ~ .card-3,
+            .radio:has(input:nth-child(4):checked) ~ .card-4,
+            .radio:has(input:nth-child(5):checked) ~ .card-5,
+            .radio:has(input:nth-child(6):checked) ~ .card-6 {
+                display: flex;
             }
         }
     }
@@ -587,7 +589,7 @@ header {
         .items {
             display: flex;
             justify-content: space-around;
-            padding: 150px 0;
+            padding: 100px 0;
             flex-wrap: wrap;
             width: 100%;
             gap: 50px;
@@ -608,47 +610,7 @@ header {
                 }
             }
         }
-        .cards {
-            display: flex;
-            flex-direction: column;
-            row-gap: 20px;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            margin-bottom: 100px;
-            .card {
-                flex-direction: column;
-                row-gap: 20px;
-                align-items: center;
-                justify-content: center;
-                padding-bottom: 50px;
-                display: none;
-                h2 {
-                    font-size: clamp(1.5rem, 10vw, 2.5rem);
-                    width: 70%;
-                    text-align: center;
-                    color: #4b4b4b;
-                }
-                p {
-                    font-size: 20px;
-                    color: #676767;
-                }
-            }
-            .radio {
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-            .radio:has(input:nth-child(1):checked) ~ .card-1,
-            .radio:has(input:nth-child(2):checked) ~ .card-2,
-            .radio:has(input:nth-child(3):checked) ~ .card-3,
-            .radio:has(input:nth-child(4):checked) ~ .card-4,
-            .radio:has(input:nth-child(5):checked) ~ .card-5,
-            .radio:has(input:nth-child(6):checked) ~ .card-6 {
-                display: flex;
-            }
-        }
+     
     }
 }
 .portfolio {
@@ -842,30 +804,6 @@ footer {
     100% {
         opacity: 1;
     }
-}
-@keyframes lefts {
-	from {
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-	}
-	to {
-        top: 45%;
-        left: 40%;
-        transform: translate(-50%,-50%);
-	}
-}
-@keyframes rights {
-	from {
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-	}
-	to {
-        top: 45%;
-        left: 60%;
-        transform: translate(-50%,-50%);
-	}
 }
 // Загрузка скилы
 @keyframes load-1 {
