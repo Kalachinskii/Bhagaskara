@@ -60,8 +60,8 @@ footer h1:before {
   transform: rotate(180deg) scale(2);
 }
 
-.about a,
-.portfolio a {
+.about .container div a,
+.portfolio .container div a {
   color: #000;
   font-size: 32px;
   text-decoration: none;
@@ -73,7 +73,7 @@ footer h1:before {
 }
 
 header {
-  background-image: url(/img/Layer2.png);
+  background-image: url(img/Layer2.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -110,6 +110,9 @@ header .container .bot .items {
   justify-content: space-around;
   flex-wrap: wrap;
   height: 50vh;
+}
+header .container .bot .items a {
+  color: #fff;
 }
 header .container .bot .items .one,
 header .container .bot .items .two,
@@ -176,17 +179,17 @@ header .container .bot .items .two {
   align-self: center;
   color: #fff;
 }
+header .container .bot .items .two .itemSkills::after {
+  content: "skills";
+}
 header .container .bot .items .two .itemServices::after {
   content: "Services";
 }
-header .container .bot .items .two .itemPortfolio::after {
-  content: "Portfolio";
+header .container .bot .items .two .itemSkills::before {
+  background: url(img/icons/pen.png) no-repeat;
 }
 header .container .bot .items .two .itemServices::before {
   background: url(img/icons/bubble.png) no-repeat;
-}
-header .container .bot .items .two .itemPortfolio::before {
-  background: url(img/icons/photo.png) no-repeat;
 }
 header .container .bot .items .fhree {
   display: flex;
@@ -194,14 +197,14 @@ header .container .bot .items .fhree {
   align-self: flex-end;
   color: #fff;
 }
-header .container .bot .items .fhree .itemBlog::after {
-  content: "Blog";
+header .container .bot .items .fhree .itemPortfolio::after {
+  content: "Portfolio";
 }
 header .container .bot .items .fhree .itemContact::after {
   content: "Contact";
 }
-header .container .bot .items .fhree .itemBlog::before {
-  background: url(img/icons/pen.png) no-repeat;
+header .container .bot .items .fhree .itemPortfolio::before {
+  background: url(img/icons/photo.png) no-repeat;
 }
 header .container .bot .items .fhree .itemContact::before {
   background: url(img/icons/paperplane.png) no-repeat;
@@ -222,7 +225,7 @@ header .container .bot .btnDown span {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(90deg);
+  transform: translate(-50%, -50%);
   font-size: 30px;
 }
 header .container .bot .btnDown img:hover + span,
@@ -233,6 +236,9 @@ header .container .bot .btnDown span:hover {
 
 .goals {
   background-color: #eeeeee;
+}
+.goals .container {
+  padding: 180px 0;
 }
 .goals .container .items {
   padding-top: 50px;
@@ -309,19 +315,19 @@ header .container .bot .btnDown span:hover {
   width: 60%;
 }
 .goals .container .items .one div:after {
-  background: url(/img/1/heart.png) no-repeat;
+  background: url(img/1/heart.png) no-repeat;
   transform: translate(-45%, -40%);
 }
 .goals .container .items .two div:after {
-  background: url(/img/1/diamond.png) no-repeat;
+  background: url(img/1/diamond.png) no-repeat;
   transform: translate(-50%, -40%);
 }
 .goals .container .items .fhree div:after {
-  background: url(/img/1/cup.png) no-repeat;
+  background: url(img/1/cup.png) no-repeat;
   transform: translate(-30%, -40%);
 }
 .goals .container .items .four div:after {
-  background: url(/img/1/phone.png) no-repeat;
+  background: url(img/1/phone.png) no-repeat;
   transform: translate(-30%, -40%);
 }
 
@@ -380,7 +386,7 @@ header .container .bot .btnDown span:hover {
 
 .education,
 .services {
-  background: url("/img/Layer 4.png");
+  background: url("img/Layer 4.png");
   background-size: cover;
   background-position: center;
 }
@@ -418,13 +424,13 @@ header .container .bot .btnDown span:hover {
 }
 
 .education .img div:after {
-  background: url(/img/3/study.png) no-repeat;
+  background: url(img/3/study.png) no-repeat;
 }
 
 .team .container {
   flex-direction: column;
   align-items: center;
-  margin-top: 180px;
+  padding: 180px 0;
 }
 .team .container .btn {
   margin: 140px 0;
@@ -496,7 +502,7 @@ header .container .bot .btnDown span:hover {
 .skills .container {
   flex-direction: column;
   align-items: center;
-  margin-top: 180px;
+  padding: 180px 0;
 }
 .skills .container .items {
   margin: 150px 0;
@@ -512,7 +518,7 @@ header .container .bot .btnDown span:hover {
   width: 100%;
   display: flex;
   gap: 10%;
-  padding: 0 10%;
+  padding: 1% 10%;
 }
 .skills .container .items .top .item,
 .skills .container .items .bottom .item {
@@ -526,6 +532,7 @@ header .container .bot .btnDown span:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: clamp(1rem, 10vw, 1.7rem);
 }
 .skills .container .items .top .item .text p,
 .skills .container .items .bottom .item .text p {
@@ -539,7 +546,7 @@ header .container .bot .btnDown span:hover {
 }
 .skills .container .items .top .item .loading,
 .skills .container .items .bottom .item .loading {
-  height: 20px;
+  height: 30px;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -570,7 +577,7 @@ header .container .bot .btnDown span:hover {
 }
 
 .services .img div:after {
-  background: url(/img/icons/bubble.png) no-repeat;
+  background: url(img/icons/bubble.png) no-repeat;
 }
 .services h2 {
   color: #fff;
@@ -581,6 +588,7 @@ header .container .bot .btnDown span:hover {
 }
 .quotes .container {
   flex-direction: column;
+  padding: 180px 0;
 }
 .quotes .container .items {
   display: flex;
@@ -680,6 +688,7 @@ header .container .bot .btnDown span:hover {
   padding-bottom: 20px;
   border: 3px solid #000;
   border-radius: 15px;
+  cursor: pointer;
   box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.8039215686), inset 0px 0px 25px 3px rgba(0, 0, 0, 0.8274509804);
 }
 .portfolio .container .items .item h3 {
@@ -916,6 +925,11 @@ footer .container .form .links a {
   header .two,
   header .fhree {
     align-self: flex-start !important;
+  }
+}
+@media screen and (min-width: 1091px) and (min-height: 900px) {
+  header .top {
+    height: 40vh;
   }
 }
 @media screen and (max-width: 992px) {
