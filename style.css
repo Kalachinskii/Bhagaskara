@@ -59,16 +59,25 @@ footer h1:before {
   transform: rotate(180deg) scale(2);
 }
 
-.about .container div a,
-.portfolio .container div a {
+.about .text-btn a,
+.portfolio .btn-bottom a,
+.portfolio .btns a {
   color: #000;
   font-size: 32px;
   text-decoration: none;
+  text-align: center;
+  align-self: center;
   border-radius: 5px;
   padding: 0.5% 2%;
   align-self: start;
   background-color: #9f449b;
   box-shadow: 5px 5px 14px 5px #000;
+  transition: 0.4s ease-in-out;
+}
+.about .text-btn a:hover,
+.portfolio .btn-bottom a:hover,
+.portfolio .btns a:hover {
+  background-color: rgba(159, 68, 155, 0.7450980392);
 }
 
 .activTextBottom {
@@ -197,7 +206,7 @@ header .container .bot .items .item img + img {
   opacity: 0;
 }
 header .container .bot .items .item:hover > img:first-child {
-  animation: animal-2 1.2s;
+  animation: animal-2 1.2s ease-in-out;
   animation-fill-mode: forwards;
 }
 header .container .bot .items .item:hover > img:last-child {
@@ -293,11 +302,11 @@ header .container .bot .btnDown span {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 30px;
+  transition: 0.5s ease-in-out;
 }
 header .container .bot .btnDown img:hover + span,
 header .container .bot .btnDown span:hover {
   color: #9f449b;
-  transition: 0.5s;
 }
 
 .goals {
@@ -446,7 +455,6 @@ header .container .bot .btnDown span:hover {
   line-height: 2.25;
 }
 .about .container .items .text-btn a:hover {
-  transition: 1s;
   background-color: rgba(159, 68, 155, 0.7450980392);
 }
 
@@ -516,11 +524,13 @@ header .container .bot .btnDown span:hover {
   justify-content: space-around;
   padding-bottom: 50px;
   display: none;
+  position: relative;
 }
 .team .container .cards .card img {
-  width: 13%;
-  height: 13%;
+  width: 50%;
+  height: 50%;
   border-radius: 50%;
+  margin-bottom: 50px;
   border: 5px solid rgba(0, 0, 0, 0.1529411765);
   box-shadow: 0 0 55px 5px #676767;
 }
@@ -538,10 +548,11 @@ header .container .bot .btnDown span:hover {
 .team .container .cards .card label i {
   color: rgba(173, 4, 162, 0.159);
   align-self: center;
-  transition: 1s;
+  transition: 1s ease-in-out;
 }
 .team .container .cards .card #left {
   left: 0%;
+  top: 100px;
 }
 .team .container .cards .card label:hover > i {
   color: rgba(173, 4, 162, 0.852);
@@ -549,6 +560,7 @@ header .container .bot .btnDown span:hover {
 }
 .team .container .cards .card #right {
   right: 0%;
+  top: 100px;
 }
 .team .container .cards .card h2 {
   font-size: clamp(1.575rem, 0.7031rem + 3.75vw, 2.805rem);
@@ -634,7 +646,7 @@ header .container .bot .btnDown span:hover {
   padding: 1% 50%;
   width: 100%;
   height: 100%;
-  transition: 3s;
+  transition: 3s ease-in-out;
   position: absolute;
 }
 .skills .container .items .top .load-1::before {
@@ -747,10 +759,6 @@ header .container .bot .btnDown span:hover {
   justify-content: center;
   flex-wrap: wrap;
 }
-.portfolio .container .btns a:hover {
-  transition: 1s;
-  background-color: rgba(159, 68, 155, 0.7450980392);
-}
 .portfolio .container .items {
   color: #000;
   display: flex;
@@ -765,29 +773,36 @@ header .container .bot .btnDown span:hover {
 }
 .portfolio .container .items .item {
   overflow: hidden;
-  padding-bottom: 20px;
-  border: 3px solid #000;
+  border: 1px solid #000;
   border-radius: 15px;
   cursor: pointer;
   box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.8039215686), inset 0px 0px 25px 3px rgba(0, 0, 0, 0.8274509804);
 }
-.portfolio .container .items .item h3 {
-  font-size: 24px;
+.portfolio .container .items .item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 20px;
+  text-decoration: none;
 }
-.portfolio .container .items .item label {
+.portfolio .container .items .item a h3 {
+  font-size: 24px;
+  color: #000;
+  transition: 0.5s ease-in-out;
+}
+.portfolio .container .items .item a label {
   color: #676767;
 }
-.portfolio .container .items .item:hover > img {
+.portfolio .container .items .item:hover h3 {
+  color: #9f449b;
+}
+.portfolio .container .items .item:hover img {
   animation: img-scale 3s alternate infinite;
 }
 .portfolio .container .btn-bottom {
-  margin-bottom: 80px;
   width: 100%;
   text-align: center;
-}
-.portfolio .container .btn-bottom a:hover {
-  transition: 1s;
-  background-color: rgba(159, 68, 155, 0.7450980392);
+  margin-bottom: 180px;
 }
 
 footer .container {
@@ -828,6 +843,9 @@ footer .container .form .blanck textarea {
   width: 100%;
   margin-top: 50px;
   padding-left: 30px;
+  border: 2px solid rgba(159, 68, 155, 0.4392156863);
+  outline-color: #9f449b;
+  border-radius: 10px;
 }
 footer .container .form .blanck textarea {
   padding-top: 10px;
@@ -855,7 +873,7 @@ footer .container .form .blanck [type=submit] {
   cursor: pointer;
 }
 footer .container .form .blanck [type=submit]:hover {
-  transition: 1s;
+  transition: 1s ease-in-out;
   background-color: rgba(159, 68, 155, 0.7450980392);
 }
 footer .container .form .text {
@@ -882,6 +900,11 @@ footer .container .form .links {
   align-self: flex-start;
 }
 footer .container .form .links a {
+  color: rgba(159, 68, 155, 0.5450980392);
+  transition: 0.6s ease-in-out;
+}
+footer .container .form .links a:hover {
+  transform: scale(1.1);
   color: #9f449b;
 }
 
@@ -1025,6 +1048,12 @@ footer .container .form .links a {
   footer .links {
     flex-direction: row !important;
     column-gap: 50px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .team img {
+    width: 25% !important;
+    height: 25% !important;
   }
 }
 @media screen and (max-width: 768px) {
