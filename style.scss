@@ -69,6 +69,72 @@ footer {
     }
 }
 
+//header
+.activTextBottom {
+    animation: animaciaTextBotton 2.8s 0s;
+}
+.activText {
+    animation: animaciaText 2.6s 0s;
+}
+.active {
+    animation: animaciaLogo 1s 0s;
+}
+.botOpaciti {
+    animation: botOpaciti 3.2s 0s;
+}
+
+@keyframes animaciaLogo {
+    0% {
+        opacity: 0;
+        transform: translate(0%, -50%);
+    }
+    40% {
+        opacity: 0;
+        transform: translate(0%, -50%);
+    }
+    100% {
+        opacity: 100%;
+        transform: translate(0%, 0%);
+    }
+}
+@keyframes animaciaText {
+    0% {
+        opacity: 0;
+        transform: translate(120%, 0%);
+    }
+    40% {
+        opacity: 0;
+        transform: translate(60%, 0%);
+    }
+    100% {
+        transform: translate(0%, 0%);
+    }
+}
+@keyframes animaciaTextBotton {
+    0% {
+        opacity: 0;
+        transform: translate(0%, 150%);
+    }
+    80% {
+        opacity: 0;
+        transform: translate(0%, 100%);
+    }
+    100% {
+        transform: translate(0%, 0%);
+    }
+}
+@keyframes botOpaciti {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 header {
     background-image: url(img/Layer2.png);
     background-size:cover;
