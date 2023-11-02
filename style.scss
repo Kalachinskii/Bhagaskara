@@ -62,6 +62,16 @@ footer {
 .activFlex {
     display: flex !important;
 }
+// animationItem
+.animationItem {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1.3s ease-in-out, transform 1.3s ease-in-out;
+}
+.animationItem.animationClass {
+    opacity: 1;
+    transform: translateY(0px);
+}
 
 header {
     background-image: url(img/Layer2.png);

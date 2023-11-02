@@ -13,101 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav');
     const header = document.querySelector('header');
     const headerScrollEnd = header.offsetHeight;
+    const arrScrollItems = document.querySelectorAll('.animationItem');
 
+    // animation
+    addAnimationElementsSection (arrScrollItems, 'animationClass');
     document.addEventListener('scroll', () => {
-        // Находим все блоки
-        const header = document.querySelector('header');
-        const goals = document.querySelector('.goals');
-        const about = document.querySelector('.about');
-        const education = document.querySelector('.education');
-        const team = document.querySelector('.team');
-        const skills = document.querySelector('.skills');
-        const services = document.querySelector('.services');
-        const quotes = document.querySelector('.quotes');
-        const portfolio = document.querySelector('.portfolio');
-        const footer = document.querySelector('footer');
-        // находим начальную высоту блоков
-        const headerStartScrol = 0;
-        const goalsStartScrol = header.offsetHeight + 1;
-        const aboutStartScrol = goals.offsetHeight + goalsStartScrol + 1;
-        const educationStartScrol = about.offsetHeight + aboutStartScrol + 1;
-        const teamStartScrol = education.offsetHeight + educationStartScrol + 1;
-        const skillsStartScrol = team.offsetHeight + teamStartScrol + 1;
-        const servicesStartScrol = skills.offsetHeight + skillsStartScrol + 1;
-        const quotesStartScrol = services.offsetHeight + servicesStartScrol + 1;
-        const portfolioStartScrol = quotes.offsetHeight + quotesStartScrol + 1;
-        const footerStartScrol = portfolio.offsetHeight + portfolioStartScrol + 1;
-
-        // получить массив всех скролов определённого класса
-        const scrollItems = document.querySelectorAll('.scrollItem');
-        // вытащить каждый элемент
-        scrollItems.forEach((element) => {
-            // узнать к какой секции относиться элемент
-            const section = element.closest('section');
-            // узнаём сколько прокрутили от вверха(0)
-            let scrollTop = window.scrollY
-            // 1/3 высоты области просмотра окна браузера с прокруткой.
-            const elementScroll = scrollTop + (window.innerHeight / 3);
-            // console.log('Прокручено: '+scrollTop+' px');
-
-            if (section.classList.contains('goals')) {
-                if (elementScroll >= goalsStartScrol && elementScroll < aboutStartScrol) {
-                    element.classList.add('animationClass');
-                } else {
-                    element.classList.remove('animationClass');
-                }
-            } else if (section.classList.contains('about')) {
-                if (elementScroll >= aboutStartScrol && elementScroll <= educationStartScrol) {
-                    element.classList.add('animationClass');
-                } else {
-                    element.classList.remove('animationClass');
-                }
-            } else if (section.classList.contains('education')) {
-                if (elementScroll >= educationStartScrol && elementScroll <= teamStartScrol) {
-                    element.classList.add('animationClass');
-                } else {
-                    element.classList.remove('animationClass');
-                }
-            } else if (section.classList.contains('team')) {
-                if (elementScroll >= teamStartScrol && elementScroll <= skillsStartScrol) {
-                    element.classList.add('animationClass');
-                } else {
-                    element.classList.remove('animationClass');
-                }
-            } else if (section.classList.contains('skills')) {
-                if (elementScroll >= skillsStartScrol && elementScroll <= servicesStartScrol) {
-                    element.classList.add('animationClass');
-                } else {
-                    element.classList.remove('animationClass');
-                }
-            } else if (section.classList.contains('services')) {
-                if (elementScroll >= servicesStartScrol && elementScroll <= quotesStartScrol) {
-                    element.classList.add('animationClass');
-                } else {
-                    element.classList.remove('animationClass');
-                }
-            } else if (section.classList.contains('quotes')) {
-                if (elementScroll >= quotesStartScrol && elementScroll <= portfolioStartScrol) {
-                    element.classList.add('animationClass');
-                } else {
-                    element.classList.remove('animationClass');
-                }
-            } else if (section.classList.contains('portfolio')) {
-                if (elementScroll >= portfolioStartScrol && elementScroll <= footerStartScrol) {
-                    element.classList.add('animationClass');
-                } else {
-                    element.classList.remove('animationClass');
-                }
-            }
-        })
+        addAnimationElementsSection (arrScrollItems, 'animationClass');
     })
 
-    //                                              navbar
+    //nav
     document.addEventListener('scroll', () => {
-        // узнаём сколько прокрутили от вверха(0)
         let scrollTop = window.scrollY;
-        
-        // Когда header закончиться сделай nav-бар видемым
+
         if (scrollTop >= headerScrollEnd) {
             nav.classList.add('navActions');
             nav.style.marginTop = `${nav.offsetHeight}px`;
@@ -135,10 +52,103 @@ function inactiveBtns() {
         element.classList.remove('acriveBtn');
     })
 }
+
 function activBtn (btn) {
     btn.classList.add('acriveBtn');
 }
 
+// получить имена секций
+getArrNameSection ();
+function getArrNameSection () {
+    const arrNameSections = [];
+    document.querySelectorAll('section').forEach((element, index) => {
+        arrNameSections[index] = element.className;
+    })
+    return arrNameSections;
+}
+
+// массив элементов с размером каждой секции
+function getHeightSection() {
+    const arrNameSection = getArrNameSection ();
+    let arrHeightSection = [];
+    arrHeightSection.push(document.querySelector('header').offsetHeight + 1);
+    arrNameSection.forEach((element, index) => {
+        arrHeightSection.push(document.querySelector('.' + element).offsetHeight + 1);
+    })
+    arrHeightSection.push(document.querySelector('footer').offsetHeight);
+    return arrHeightSection;
+}
+
+// размер секций с учётом высоты  старых секций
+function getHeightStartSection() {
+    const arrHeightSection = getHeightSection();
+    let arrHeightScrollSection = [];
+    let sumBlock = arrHeightSection.reduce((a,b) => {
+        return a + b;
+    }, 0);
+    arrHeightSection.reverse().forEach((element, i) => {
+        arrHeightScrollSection[i] = sumBlock -= +element;
+    })
+    return arrHeightScrollSection.reverse();
+}
+
+function addAnimationElementsSection (arrItemAnimals, animationClass) {
+    const arrName = getArrNameSection ();
+    const arrHeight = getHeightStartSection();
+    const elementScroll = window.scrollY + (window.innerHeight / 3);
+
+    arrItemAnimals.forEach((element) => {
+        if (element.closest('section').classList.contains(arrName[0])) {
+            if (elementScroll >= arrHeight[1] && elementScroll < arrHeight[2]) {
+                element.classList.add(animationClass);
+            } else {
+                element.classList.remove(animationClass);
+            }
+        } else if (element.closest('section').classList.contains(arrName[1])) {
+            if (elementScroll >= arrHeight[2] && elementScroll < arrHeight[3]) {
+                element.classList.add(animationClass);
+            } else {
+                element.classList.remove(animationClass);
+            }
+        } else if (element.closest('section').classList.contains(arrName[2])) {
+            if (elementScroll >= arrHeight[3] && elementScroll < arrHeight[4]) {
+                element.classList.add(animationClass);
+            } else {
+                element.classList.remove(animationClass);
+            }
+        } else if (element.closest('section').classList.contains(arrName[3])) {
+            if (elementScroll >= arrHeight[4] && elementScroll < arrHeight[5]) {
+                element.classList.add(animationClass);
+            } else {
+                element.classList.remove(animationClass);
+            }
+        } else if (element.closest('section').classList.contains(arrName[4])) {
+            if (elementScroll >= arrHeight[5] && elementScroll < arrHeight[6]) {
+                element.classList.add(animationClass);
+            } else {
+                element.classList.remove(animationClass);
+            }
+        } else if (element.closest('section').classList.contains(arrName[5])) {
+            if (elementScroll >= arrHeight[6] && elementScroll < arrHeight[7]) {
+                element.classList.add(animationClass);
+            } else {
+                element.classList.remove(animationClass);
+            }
+        } else if (element.closest('section').classList.contains(arrName[6])) {
+            if (elementScroll >= arrHeight[7] && elementScroll < arrHeight[8]) {
+                element.classList.add(animationClass);
+            } else {
+                element.classList.remove(animationClass);
+            }
+        } else if (element.closest('section').classList.contains(arrName[7])) {
+            if (elementScroll >= arrHeight[8] && elementScroll < arrHeight[9]) {
+                element.classList.add(animationClass);
+            } else {
+                element.classList.remove(animationClass);
+            }
+        }
+    })
+};
 
 
 
