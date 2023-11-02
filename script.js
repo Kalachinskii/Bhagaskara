@@ -7,53 +7,106 @@ document.querySelector('.team .cards').addEventListener('click', (e) => {
     };
 })
 
-// // пользовательская высота от бордера до бордера
-// function getHeightBox(teg) {
-//     return teg.scrollHeight + teg.clientLeft + (teg.offsetHeight - (teg.clientHeight + teg.clientLeft));
-// }
-
-// // вариант 1
-// window.addEventListener('scroll', function (event) {
-//     //вся высота
-//     const bodyHeight = document.documentElement.offsetHeight;
-//     //узнать сколько px прокрутил страницу
-//     const scrolUp = window.pageYOffset;
-//     // высота элемента
-//     const headerHeight = getHeightBox(document.querySelector('header'));
-//     if (scrolUp >= 0 && scrolUp < headerHeight) {
-//         document.querySelector('header h1').classList.add('active');
-//         document.querySelector('header h4').classList.add('activText');
-//         document.querySelector('header p').classList.add('activTextBottom');
-//         document.querySelector('header .bot').classList.add('botOpaciti');
-//         console.log(1);
-//     } else {
-//         document.querySelector('header h1').classList.remove('active');
-//         document.querySelector('header h4').classList.remove('activText');
-//         document.querySelector('header p').classList.remove('activTextBottom');
-//         document.querySelector('header .bot').classList.remove('botOpaciti');
-//     }
-// })
-
+// АНИМАЦИИ
 // выполнение когда загружаем страницу
 document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav');
-    // Находим все блоки
     const header = document.querySelector('header');
-    const goals = document.querySelector('.goals');
-    const about = document.querySelector('.about');
-    const education = document.querySelector('.education');
-    const team = document.querySelector('.team');
-    const skills = document.querySelector('.skills');
-    const services = document.querySelector('.services');
-    const quotes = document.querySelector('.quotes');
-    const portfolio = document.querySelector('.portfolio');
-    const footer = document.querySelector('footer');
-    // узнаём размер header
-    let headerScrollEnd = header.offsetHeight;
-    // добовляем событие прокрутки выполняющая ананимную функцию
+    const headerScrollEnd = header.offsetHeight;
+
+    document.addEventListener('scroll', () => {
+        // Находим все блоки
+        const header = document.querySelector('header');
+        const goals = document.querySelector('.goals');
+        const about = document.querySelector('.about');
+        const education = document.querySelector('.education');
+        const team = document.querySelector('.team');
+        const skills = document.querySelector('.skills');
+        const services = document.querySelector('.services');
+        const quotes = document.querySelector('.quotes');
+        const portfolio = document.querySelector('.portfolio');
+        const footer = document.querySelector('footer');
+        // находим начальную высоту блоков
+        const headerStartScrol = 0;
+        const goalsStartScrol = header.offsetHeight + 1;
+        const aboutStartScrol = goals.offsetHeight + goalsStartScrol + 1;
+        const educationStartScrol = about.offsetHeight + aboutStartScrol + 1;
+        const teamStartScrol = education.offsetHeight + educationStartScrol + 1;
+        const skillsStartScrol = team.offsetHeight + teamStartScrol + 1;
+        const servicesStartScrol = skills.offsetHeight + skillsStartScrol + 1;
+        const quotesStartScrol = services.offsetHeight + servicesStartScrol + 1;
+        const portfolioStartScrol = quotes.offsetHeight + quotesStartScrol + 1;
+        const footerStartScrol = portfolio.offsetHeight + portfolioStartScrol + 1;
+
+        // получить массив всех скролов определённого класса
+        const scrollItems = document.querySelectorAll('.scrollItem');
+        // вытащить каждый элемент
+        scrollItems.forEach((element) => {
+            // узнать к какой секции относиться элемент
+            const section = element.closest('section');
+            // узнаём сколько прокрутили от вверха(0)
+            let scrollTop = window.scrollY
+            // 1/3 высоты области просмотра окна браузера с прокруткой.
+            const elementScroll = scrollTop + (window.innerHeight / 3);
+            // console.log('Прокручено: '+scrollTop+' px');
+
+            if (section.classList.contains('goals')) {
+                if (elementScroll >= goalsStartScrol && elementScroll < aboutStartScrol) {
+                    element.classList.add('animationClass');
+                } else {
+                    element.classList.remove('animationClass');
+                }
+            } else if (section.classList.contains('about')) {
+                if (elementScroll >= aboutStartScrol && elementScroll <= educationStartScrol) {
+                    element.classList.add('animationClass');
+                } else {
+                    element.classList.remove('animationClass');
+                }
+            } else if (section.classList.contains('education')) {
+                if (elementScroll >= educationStartScrol && elementScroll <= teamStartScrol) {
+                    element.classList.add('animationClass');
+                } else {
+                    element.classList.remove('animationClass');
+                }
+            } else if (section.classList.contains('team')) {
+                if (elementScroll >= teamStartScrol && elementScroll <= skillsStartScrol) {
+                    element.classList.add('animationClass');
+                } else {
+                    element.classList.remove('animationClass');
+                }
+            } else if (section.classList.contains('skills')) {
+                if (elementScroll >= skillsStartScrol && elementScroll <= servicesStartScrol) {
+                    element.classList.add('animationClass');
+                } else {
+                    element.classList.remove('animationClass');
+                }
+            } else if (section.classList.contains('services')) {
+                if (elementScroll >= servicesStartScrol && elementScroll <= quotesStartScrol) {
+                    element.classList.add('animationClass');
+                } else {
+                    element.classList.remove('animationClass');
+                }
+            } else if (section.classList.contains('quotes')) {
+                if (elementScroll >= quotesStartScrol && elementScroll <= portfolioStartScrol) {
+                    element.classList.add('animationClass');
+                } else {
+                    element.classList.remove('animationClass');
+                }
+            } else if (section.classList.contains('portfolio')) {
+                if (elementScroll >= portfolioStartScrol && elementScroll <= footerStartScrol) {
+                    element.classList.add('animationClass');
+                } else {
+                    element.classList.remove('animationClass');
+                }
+            }
+        })
+    })
+
+    //                                              navbar
     document.addEventListener('scroll', () => {
         // узнаём сколько прокрутили от вверха(0)
         let scrollTop = window.scrollY;
+        
         // Когда header закончиться сделай nav-бар видемым
         if (scrollTop >= headerScrollEnd) {
             nav.classList.add('navActions');
@@ -61,8 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }  else {
             nav.classList.remove('navActions');
             nav.style.marginTop = `0px`;
-        } 
+        }
     })
+
     document.addEventListener('click', (event) => {
         if (event.target.matches('.material-symbols-outlined')) {
             document.querySelector('.link').classList.toggle("activFlex");
@@ -84,8 +138,6 @@ function inactiveBtns() {
 function activBtn (btn) {
     btn.classList.add('acriveBtn');
 }
-
-
 
 
 

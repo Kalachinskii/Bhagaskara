@@ -50,73 +50,6 @@ footer h1 span {
   color: #9f449b;
 }
 
-.activTextBottom {
-  animation: animaciaTextBotton 2.8s 0s;
-}
-
-.activText {
-  animation: animaciaText 2.6s 0s;
-}
-
-.active {
-  animation: animaciaLogo 1s 0s;
-}
-
-.botOpaciti {
-  animation: botOpaciti 3.2s 0s;
-}
-
-@keyframes animaciaLogo {
-  0% {
-    opacity: 0;
-    transform: translate(0%, -50%);
-  }
-  40% {
-    opacity: 0;
-    transform: translate(0%, -50%);
-  }
-  100% {
-    opacity: 100%;
-    transform: translate(0%, 0%);
-  }
-}
-@keyframes animaciaText {
-  0% {
-    opacity: 0;
-    transform: translate(120%, 0%);
-  }
-  40% {
-    opacity: 0;
-    transform: translate(60%, 0%);
-  }
-  100% {
-    transform: translate(0%, 0%);
-  }
-}
-@keyframes animaciaTextBotton {
-  0% {
-    opacity: 0;
-    transform: translate(0%, 150%);
-  }
-  80% {
-    opacity: 0;
-    transform: translate(0%, 100%);
-  }
-  100% {
-    transform: translate(0%, 0%);
-  }
-}
-@keyframes botOpaciti {
-  0% {
-    opacity: 0;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .navActions {
   display: flex !important;
   position: fixed;
@@ -156,7 +89,7 @@ header .container nav .logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 95%;
 }
 header .container nav .logo a {
   text-decoration: none;
@@ -182,7 +115,7 @@ header .container nav .logo .material-symbols-outlined:hover {
   color: #9f449b;
 }
 header .container nav .link {
-  width: 90%;
+  width: 95%;
   display: none;
   flex-direction: column;
   align-items: flex-start;
@@ -217,11 +150,11 @@ header .container .top h1 {
 header .container .top h1 span {
   color: #9f449b;
 }
-header .container .top .fusce h4 {
+header .container .top h4 {
   font-size: 48px;
   line-height: 100%;
 }
-header .container .top .fusce p {
+header .container .top p {
   font-size: 24px;
   line-height: 30px;
 }
