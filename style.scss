@@ -6,6 +6,7 @@ body{
     margin: 0;
     box-sizing: border-box;
     color: #000;
+    // overflow-x: hidden;
 }
 .container {
     margin: 0px auto;
@@ -1194,7 +1195,7 @@ footer {
         }
     }
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 426px) {
     .about,
     .team,
     .skills,

@@ -1171,7 +1171,7 @@ footer .container .form .links a:hover {
     transform: translateZ(7.5em) !important;
   }
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 426px) {
   .about h1:after,
   .team h1:after,
   .skills h1:after,
