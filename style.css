@@ -75,6 +75,45 @@ footer h1 span {
   transform: translateY(0px);
 }
 
+.animationItemLeft {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 0.8s ease-in-out, transform 1.3s ease-in-out;
+}
+
+.animationItemLeft:nth-child(1) {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: 1.8s ease-in-out, transform 1.3s 0.2s ease-in-out;
+}
+
+.animationItemRight {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: 0.8s ease-in-out, transform 1.3s ease-in-out;
+}
+
+.animationItemRight:last-child {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1.8s ease-in-out, transform 1.3s 0.2s ease-in-out;
+}
+
+.animationItemLeft.animationClassLeft,
+.animationItemRight.animationClassRight {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.animationItemOpacity {
+  opacity: 0;
+  transition: 1.9s ease-in-out, transform 1.3s ease-in-out;
+}
+
+.animationItemOpacity.animationClassOpacity {
+  opacity: 1;
+}
+
 header {
   background-image: url(img/Layer2.png);
   background-size: cover;
@@ -90,7 +129,6 @@ header .container nav {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 10px 0;
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
@@ -155,21 +193,26 @@ header .container .top {
   color: #fff;
 }
 header .container .top h1 {
+  animation: scalyH 1.5s linear;
   font-family: "Raleway", sans-serif;
   font-size: clamp(3.5rem, 10vw, 6rem);
 }
 header .container .top h1 span {
   color: #9f449b;
 }
-header .container .top h4 {
+header .container .top .text {
+  animation: opacityBox 3s linear;
+}
+header .container .top .text h4 {
   font-size: 48px;
   line-height: 100%;
 }
-header .container .top p {
+header .container .top .text p {
   font-size: 24px;
   line-height: 30px;
 }
 header .container .bot {
+  animation: opacityBox 3s linear;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -906,6 +949,24 @@ footer .container .form .links a:hover {
   color: #9f449b;
 }
 
+@keyframes scalyH {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes opacityBox {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes animal-1 {
   0% {
     transform: translateX(100%);

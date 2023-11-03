@@ -11,26 +11,47 @@ document.querySelector('.team .cards').addEventListener('click', (e) => {
 // выполнение когда загружаем страницу
 document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav');
+    const navHeight = nav.clientHeight;
     const header = document.querySelector('header');
     const headerScrollEnd = header.offsetHeight;
     const arrScrollItems = document.querySelectorAll('.animationItem');
+    const arrScrollItems2 = document.body.querySelectorAll('.animationItemLeft');
+    const arrScrollItems3 = document.querySelectorAll('.animationItemRight');
+    const arrScrollItems4 = document.querySelectorAll('.animationItemOpacity');
+    const arrScrollItems5 = document.querySelectorAll('.animationItemSkills1');
+    const arrScrollItems6 = document.querySelectorAll('.animationItemSkills2');
+    const arrScrollItems7 = document.querySelectorAll('.animationItemSkills3');
+    const arrScrollItems8 = document.querySelectorAll('.animationItemSkills4');
+    addAnimationElementsSection (arrScrollItems, 'animationClass');
+    addAnimationElementsSection (arrScrollItems2, 'animationClassLeft');
+    addAnimationElementsSection (arrScrollItems3, 'animationClassRight');
+    addAnimationElementsSection (arrScrollItems4, 'animationClassOpacity');
+    addAnimationElementsSection (arrScrollItems5, 'load-1');
+    addAnimationElementsSection (arrScrollItems6, 'load-2');
+    addAnimationElementsSection (arrScrollItems7, 'load-3');
+    addAnimationElementsSection (arrScrollItems8, 'load-4');
 
     // animation
-    addAnimationElementsSection (arrScrollItems, 'animationClass');
     document.addEventListener('scroll', () => {
         addAnimationElementsSection (arrScrollItems, 'animationClass');
+        addAnimationElementsSection (arrScrollItems2, 'animationClassLeft');
+        addAnimationElementsSection (arrScrollItems3, 'animationClassRight');
+        addAnimationElementsSection (arrScrollItems4, 'animationClassOpacity');
+        addAnimationElementsSection (arrScrollItems5, 'load-1');
+        addAnimationElementsSection (arrScrollItems6, 'load-2');
+        addAnimationElementsSection (arrScrollItems7, 'load-3');
+        addAnimationElementsSection (arrScrollItems8, 'load-4');
     })
 
     //nav
     document.addEventListener('scroll', () => {
         let scrollTop = window.scrollY;
-
         if (scrollTop >= headerScrollEnd) {
             nav.classList.add('navActions');
-            nav.style.marginTop = `${nav.offsetHeight}px`;
+            document.querySelector('header .top').style.marginTop = `${navHeight}px`;
         }  else {
             nav.classList.remove('navActions');
-            nav.style.marginTop = `0px`;
+            document.querySelector('header .top').style.marginTop = `0px`;
         }
     })
 
