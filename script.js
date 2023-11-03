@@ -11,7 +11,7 @@ document.querySelector('.team .cards').addEventListener('click', (e) => {
 // выполнение когда загружаем страницу
 document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav');
-    const navHeight = nav.clientHeight;
+    const navHeight = nav.offsetHeight;
     const header = document.querySelector('header');
     const headerScrollEnd = header.offsetHeight;
     const arrScrollItems = document.querySelectorAll('.animationItem');

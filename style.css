@@ -131,8 +131,9 @@ header .container nav {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
-  backdrop-filter: blur(10px);
+  align-self: center;
+  background-color: #fff;
+  border: 1px solid #676767;
 }
 header .container nav .logo {
   display: flex;
@@ -146,8 +147,7 @@ header .container nav .logo a {
 }
 header .container nav .logo a h1 {
   font-size: 42px;
-  padding: 0;
-  margin: 0;
+  line-height: 15px;
   color: #696969;
 }
 header .container nav .logo a h1 span {

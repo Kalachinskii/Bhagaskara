@@ -122,8 +122,10 @@ header {
             width: 100%;
             justify-content: space-between;
             align-items: center;
-            background-color: transparent;
-            backdrop-filter:  blur(10px);
+            align-self: center;
+            background-color: #fff;
+            border: 1px solid #676767;
+            // backdrop-filter:  blur(4px);
             .logo {
                 display: flex;
                 justify-content: space-between;
@@ -134,8 +136,7 @@ header {
                     text-transform: none;
                     h1 {
                         font-size: 42px;
-                        padding: 0;
-                        margin: 0;
+                        line-height: 15px;
                         color: #696969;
                         span {
                             color: $activ_color;
